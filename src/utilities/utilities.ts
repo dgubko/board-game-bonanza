@@ -1,12 +1,4 @@
-interface Game {
-    name: string;
-    price: string;
-    rank: number;
-    id: string;
-    thumb_url: string;
-    average_user_rating: number;
-    num_user_ratings: number;
-}
+import { Game, Details } from '../interfaces'
 
 export const cleanTop100Data = (data: {games: Game[]}) => {
     const cleanList = data.games.map((game: Game) => {
@@ -21,20 +13,6 @@ export const cleanTop100Data = (data: {games: Game[]}) => {
         }
     })
     return cleanList;
-}
-
-interface Deatails {
-    name: string;
-    rank: number;
-    id: string;
-    price: string;
-    average_user_rating: number;
-    num_user_ratings: number;
-    description: string;
-    players: string;
-    officialUrl: string;
-    playtime: string;
-    image: string;
 }
 
 export const cleanDetails = (game: any) => {

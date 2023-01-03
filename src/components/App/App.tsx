@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Route, NavLink, Routes } from 'react-router-dom';
 import logo from "./logo.svg";
 import "./App.css";
 import { getTop100, getDetails } from "../../apiCalls/games";
 import { cleanTop100Data, cleanDetails } from "../../utilities/utilities";
+import { Game, CleanedGame } from '../../interfaces';
 import { promises } from "stream";
+import Top100 from '../Top100/Top100';
+
 
 function App() {
-  Promise.resolve(getTop100()).then((data) => {
-    console.log(cleanTop100Data(data));
-  });
+  const [top100, setTop100] = useState<CleanedGame[]>([])
+
+  useEffect(() => {
+    Promise.resolve(getTop100()).then((data) => {
+      setTop100(cleanTop100Data(data));
+    })
+  },[])
+
 
   Promise.resolve(getDetails("TAAifFP590")).then((data) => {
     console.log(cleanDetails(data));
@@ -17,6 +26,9 @@ function App() {
   return (
     <div className="App">
       <h1>Hello World!</h1>
+      <Routes>
+        <Route path='/' element={<Top100 top100={top100}/>}/>
+      </Routes>
     </div>
   );
 }
