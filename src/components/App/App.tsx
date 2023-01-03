@@ -7,10 +7,12 @@ import { cleanTop100Data, cleanDetails } from "../../utilities/utilities";
 import { Game, CleanedGame } from '../../interfaces';
 import { promises } from "stream";
 import Top100 from '../Top100/Top100';
+import Favorites from '../Favorites/Favorites';
 
 
 function App() {
   const [top100, setTop100] = useState<CleanedGame[]>([])
+  const [favGames, setFavGames] = useState<CleanedGame[]>([])
 
   useEffect(() => {
     Promise.resolve(getTop100()).then((data) => {
@@ -28,6 +30,7 @@ function App() {
       <h1>Hello World!</h1>
       <Routes>
         <Route path='/' element={<Top100 top100={top100}/>}/>
+        <Route path='/favorites' element={<Favorites favGames={favGames}/>}/>
       </Routes>
     </div>
   );
