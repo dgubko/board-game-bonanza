@@ -18,7 +18,7 @@ export interface CleanedGame {
     numUserRatings: number;
 }
 
-export interface Details {
+export interface GameDetails {
     name: string;
     rank: number;
     id: string;
