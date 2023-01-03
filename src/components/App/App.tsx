@@ -33,8 +33,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Top100 top100={top100}/>}/>
         <Route path='/favorites' element={<Favorites favGames={favGames}/>}/>
-        {/* <Route path='/details/:id' element={<Details details={details}/>}/> */}
-        <Route index element={<Details />}/>
+        {/* <Route index element={<Details />}/> */}
         <Route path='/details/:id' element={<Details />}/> 
       </Routes>
     </div>
