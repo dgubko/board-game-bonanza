@@ -3,19 +3,12 @@
     border: none;
     background-color: white;
   }
-  .top-20{
-    /* position:relative; */
-    top:20vh;
-  }
+
   .heart.active{
     animation:like 0.5s 1;
     fill:red;
-    stroke:none;
   }
   .heart{
-    fill:transparent;
-    stroke:black;
-    stroke-width:30;
     transition:all 0.5s;
   }
   
