@@ -8,7 +8,7 @@ import { Game, CleanedGame, GameDetails } from "../../interfaces";
 import { promises } from "stream";
 import Top100 from '../Top100/Top100';
 import Favorites from '../Favorites/Favorites';
-import Details from '../../Details/Details';
+import Details from '../Details/Details';
 import { getRandomWord } from '../../utilities/utilities'
 const dice = require('../../images/dice.png')
 
