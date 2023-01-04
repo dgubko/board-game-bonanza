@@ -21,19 +21,12 @@
 # Where were the changes?
 
 
-# How Has This Been Tested?
-Tested numerous times on the DOM/eternal API backend servers and using console logs to ensure it is still functioning as before and confirmed this is the case. Also, all new and old tests are passing.
-
-- [ ] Test Approved
-
 # Checklist:
 
 - [ ]  My code follows the style guidelines of this project
 - [ ]  I have performed a self-review of my code
-- [ ]  I have commented my code, particularly in hard-to-understand areas
-- [ ]  I have made corresponding changes to the documentation
+- [ ]  I have commented my code, particularly in hard-to-understand areas (if applicable)
+- [ ]  I have made corresponding changes to the documentation (if applicable)
 - [ ]  My changes generate no new warnings
-- [ ]  I have added tests that prove my fix is effective or that my feature works
-- [ ]  New and existing unit tests pass locally with my changes
 
 # Contributors (paired programming):
