@@ -17,25 +17,7 @@ function App() {
   const [top100, setTop100] = useState<CleanedGame[]>([]);
   const [details, setDetails] = useState<GameDetails>();
   const [bWord, setBWord] = useState<string>("Bonanza");
-  const [favGames, setFavGames] = useState<CleanedGame[]>([{ averageUserRating: 4.061560793825552,
-    id: "TAAifFP590",
-    image: "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1540147295104",
-    name: "Root",
-    numUserRatings: 404,
-    price: "47.99",
-    rank: 1,
-    isFavorited: true
-    },
-    {
-    averageUserRating: 4.222249667994687,
-    id: "yqR4PtpO8X",
-    image: "https://cdn.shopify.com/s/files/1/0513/4077/1515/products/scythe-board-game.jpg?v=1611090922",
-    name: "Scythe",
-    numUserRatings: 753,
-    price: "54.92",
-    rank: 2,
-    isFavorited: true
-    }])
+  const [favGames, setFavGames] = useState<CleanedGame[]>([])
 
   useEffect(() => {
     Promise.resolve(getTop100()).then((data) => {
@@ -47,6 +29,7 @@ function App() {
   const toggleFavorite = (id: string) => {
     const newGames = top100.map(game => {
       if(game.id === id) {
+        console.log(game.isFavorited)
         return {
           ...game, isFavorited: !game.isFavorited
         }
@@ -67,8 +50,8 @@ function App() {
         <NavLink to='/favorites'><button>Favorites</button></NavLink>
       </nav>
       <Routes>
-        <Route path="/" element={<Top100 top100={top100} />} />
-        <Route path="/favorites" element={<Favorites favGames={favGames} toggleFav={toggleFavorite} />} />
+        <Route path="/" element={<Top100 top100={top100} toggleFav={toggleFavorite}/>} />
+        <Route path="/favorites" element={<Favorites top100={top100} toggleFav={toggleFavorite} />} />
         <Route path="/details/:id" element={<Details />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

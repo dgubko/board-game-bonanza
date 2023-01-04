@@ -16,7 +16,8 @@ export interface CleanedGame {
     image: string;
     averageUserRating: number;
     numUserRatings: number;
-    isFavorited: boolean
+    isFavorited: boolean;
+    toggleFav?: (id: string) => void;
 }
 
 export interface GameDetails {

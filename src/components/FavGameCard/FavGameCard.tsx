@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { BsSuitHeartFill } from 'react-icons/bs'
+import './FavGameCard.css';
 
 
 interface Props {
@@ -7,24 +8,27 @@ interface Props {
     image: string;
     name: string;
     rating: number;
-    toggleFav: void;
+    toggleFav: (id: string) => void;
 }
 
-const FavGameCard = ({id, image, name, rating, toggleFav}: Props) => {
-    
-    return(
-        <Link to={'/details/' + id}>
-            <div>
-                <img src={image}></img>
+const FavGameCard = ({ id, image, name, rating, toggleFav }: Props) => {
+
+    return (
+        <div>
+            <Link to={'/details/' + id}>
                 <div>
-                    <p>{name}</p>
-                    <p>{rating}</p>
-                    <div onClick = {() => toggleFav(id)}className='large-font text-center'>
-                        <BsSuitHeartFill className="heart" />
+                    <img src={image}></img>
+                    <div>
+                        <p>{name}</p>
+                        <p>{rating}</p>
+
                     </div>
                 </div>
+            </Link>
+            <div onClick={() => toggleFav(id)} className='heart'>
+                <BsSuitHeartFill className="heart" />
             </div>
-        </Link>
+        </div>
     )
 }
 
