@@ -10,6 +10,7 @@ const Top100 = ({top100}:{top100: CleanedGame[]}) => {
             price={game.price}
             rank={game.rank}
             id={game.id}
+            key={game.id}
             image={game.image}
             averageUserRating={game.averageUserRating}
             numUserRatings={game.numUserRatings}
