@@ -15,6 +15,7 @@ const Top100 = ({top100}:{top100: CleanedGame[]}) => {
             image={game.image}
             averageUserRating={game.averageUserRating}
             numUserRatings={game.numUserRatings}
+            isFavorited={game.isFavorited}
             />
         )
     })

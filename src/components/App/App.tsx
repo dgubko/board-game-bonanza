@@ -23,7 +23,8 @@ function App() {
     name: "Root",
     numUserRatings: 404,
     price: "47.99",
-    rank: 1
+    rank: 1,
+    isFavorited: true
     },
     {
     averageUserRating: 4.222249667994687,
@@ -33,6 +34,7 @@ function App() {
     numUserRatings: 753,
     price: "54.92",
     rank: 2,
+    isFavorited: true
     }])
 
   useEffect(() => {
