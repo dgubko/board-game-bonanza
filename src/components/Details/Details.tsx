@@ -22,7 +22,7 @@ const Details = ({ details }: { details?: GameDetails }) => {
         <button>Like</button>
       </div>
       <div>
-        <image />
+        <img src={gameInfo.image}></img>
         <div>
           <h2>{gameInfo.name}</h2>
           <p>Rank: {gameInfo.rank}</p>
