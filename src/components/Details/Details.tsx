@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GameDetails, CleanDetails } from "../../interfaces";
 import { getDetails } from "../../apiCalls/games";
@@ -20,7 +20,7 @@ const Details = ({ details }: { details?: GameDetails }) => {
       <h1></h1>
       <div>
         <button>Like</button>
-        <button>Go Back</button>
+        <Link to='/'><button>Go Back</button></Link>
       </div>
       <div>
         <image />
