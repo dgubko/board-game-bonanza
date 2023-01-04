@@ -9,6 +9,7 @@ import { promises } from "stream";
 import Top100 from '../Top100/Top100';
 import Favorites from '../Favorites/Favorites';
 import Details from '../../Details/Details';
+import { getRandomWord } from '../../utilities/utilities'
 const dice = require('../../images/dice.png')
 
 
@@ -22,7 +23,7 @@ function App() {
     Promise.resolve(getTop100()).then((data) => {
       setTop100(cleanTop100Data(data));
     })
-
+    setBWord(getRandomWord())
   },[])
 
 
@@ -34,7 +35,7 @@ function App() {
     <div className="App">
       <header>
         <img src={dice}/>
-        <h1>Boardgame Bonanza</h1>
+        <h1>Boardgame {bWord}</h1>
       </header>
       <Routes>
         <Route path='/' element={<Top100 top100={top100}/>}/>
