@@ -4,6 +4,7 @@ import { GameDetails, CleanDetails } from "../../interfaces";
 import { getDetails } from "../../apiCalls/games";
 import { cleanDetails } from "../../utilities/utilities";
 import { BsSuitHeartFill } from "react-icons/bs"
+import './Details.css'
 
 
 const Details = ({ details }: { details?: GameDetails }) => {
@@ -21,7 +22,11 @@ const Details = ({ details }: { details?: GameDetails }) => {
     <div>
       <h1></h1>
       <div>
+      <div className='large-font text-center top-20'>
       <BsSuitHeartFill className="heart" />
+    {/* <div class='red-bg'></div> */}
+    </div>
+      
         <button>Go Back</button>
       </div>
       <div>
