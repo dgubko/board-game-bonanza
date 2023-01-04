@@ -20,7 +20,6 @@ const Details = ({ details }: { details?: GameDetails }) => {
       <h1></h1>
       <div>
         <button>Like</button>
-        <Link to='/'><button>Go Back</button></Link>
       </div>
       <div>
         <image />

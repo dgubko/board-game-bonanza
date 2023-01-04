@@ -15,7 +15,23 @@ const dice = require('../../images/dice.png')
 
 function App() {
   const [top100, setTop100] = useState<CleanedGame[]>([])
-  const [favGames, setFavGames] = useState<CleanedGame[]>([])
+  const [favGames, setFavGames] = useState<CleanedGame[]>([{ averageUserRating: 4.061560793825552,
+    id: "TAAifFP590",
+    image: "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1540147295104",
+    name: "Root",
+    numUserRatings: 404,
+    price: "47.99",
+    rank: 1
+    },
+    {
+    averageUserRating: 4.222249667994687,
+    id: "yqR4PtpO8X",
+    image: "https://cdn.shopify.com/s/files/1/0513/4077/1515/products/scythe-board-game.jpg?v=1611090922",
+    name: "Scythe",
+    numUserRatings: 753,
+    price: "54.92",
+    rank: 2,
+    }])
   const [bWord, setBWord] = useState<string>('Bonanza')
 
   useEffect(() => {
