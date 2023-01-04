@@ -8,7 +8,7 @@ export const PageNotFound = () => {
       <h3>Page not found</h3>
       <p>
         We're sorry, the page you requested could not be found. Please go back
-        to the homepage.{" "}
+        to the homepage.
       </p>
       <Link to="/">
         <button>Go back</button>
