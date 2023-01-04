@@ -16,7 +16,6 @@ const dice = require('../../images/dice.png')
 function App() {
   const [top100, setTop100] = useState<CleanedGame[]>([])
   const [favGames, setFavGames] = useState<CleanedGame[]>([])
-  const [details, setDetails] = useState<GameDetails>()
   const [bWord, setBWord] = useState<string>('Bonanza')
 
   useEffect(() => {
@@ -37,6 +36,10 @@ function App() {
         <img src={dice}/>
         <h1>Boardgame {bWord}</h1>
       </header>
+      <nav>
+        <NavLink to='/'><button>Top 100</button></NavLink>
+        <NavLink to='/favorites'><button>Favorites</button></NavLink>
+      </nav>
       <Routes>
         <Route path='/' element={<Top100 top100={top100}/>}/>
         <Route path='/favorites' element={<Favorites favGames={favGames}/>}/>
