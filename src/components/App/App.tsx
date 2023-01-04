@@ -9,17 +9,20 @@ import { promises } from "stream";
 import Top100 from '../Top100/Top100';
 import Favorites from '../Favorites/Favorites';
 import Details from '../../Details/Details';
+const dice = require('../../images/dice.png')
 
 
 function App() {
   const [top100, setTop100] = useState<CleanedGame[]>([])
   const [favGames, setFavGames] = useState<CleanedGame[]>([])
   const [details, setDetails] = useState<GameDetails>()
+  const [bWord, setBWord] = useState<string>('Bonanza')
 
   useEffect(() => {
     Promise.resolve(getTop100()).then((data) => {
       setTop100(cleanTop100Data(data));
     })
+
   },[])
 
 
@@ -29,7 +32,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <header>
+        <img src={dice}/>
+        <h1>Boardgame Bonanza</h1>
+      </header>
       <Routes>
         <Route path='/' element={<Top100 top100={top100}/>}/>
         <Route path='/favorites' element={<Favorites favGames={favGames}/>}/>
