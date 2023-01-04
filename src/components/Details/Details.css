@@ -8,6 +8,7 @@
     animation:like 0.5s 1;
     fill:red;
   }
+  
   .heart{
     transition:all 0.5s;
   }

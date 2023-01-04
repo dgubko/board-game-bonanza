@@ -22,9 +22,8 @@ const Details = ({ details }: { details?: GameDetails }) => {
     <div>
       <h1></h1>
       <div>
-      <div className='large-font text-center top-20'>
+      <div className='large-font text-center'>
       <BsSuitHeartFill className="heart" />
-    {/* <div class='red-bg'></div> */}
     </div>
       
         <button>Go Back</button>
