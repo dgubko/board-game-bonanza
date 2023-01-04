@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { GameDetails, CleanDetails } from "../../interfaces";
 import { getDetails } from "../../apiCalls/games";
 import { cleanDetails } from "../../utilities/utilities";
+import { BsSuitHeartFill } from "react-icons/bs"
+
 
 const Details = ({ details }: { details?: GameDetails }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
@@ -19,7 +21,7 @@ const Details = ({ details }: { details?: GameDetails }) => {
     <div>
       <h1></h1>
       <div>
-        <button>Like</button>
+      <BsSuitHeartFill className="heart" />
         <button>Go Back</button>
       </div>
       <div>
