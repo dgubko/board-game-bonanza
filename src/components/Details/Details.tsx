@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GameDetails, CleanDetails } from "../../interfaces";
 import { getDetails } from "../../apiCalls/games";
@@ -21,15 +21,11 @@ const Details = ({ details }: { details?: GameDetails }) => {
   return (
     <div>
       <h1></h1>
-      <div>
       <div className='large-font text-center'>
-      <BsSuitHeartFill className="heart" />
-    </div>
-      
-        <button>Go Back</button>
+        <BsSuitHeartFill className="heart" />
       </div>
       <div>
-        <image />
+        <img src={gameInfo.image}></img>
         <div>
           <h2>{gameInfo.name}</h2>
           <p>Rank: {gameInfo.rank}</p>
