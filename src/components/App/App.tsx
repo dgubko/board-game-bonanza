@@ -44,9 +44,17 @@ function App() {
     setBWord(getRandomWord());
   }, []);
 
-  // Promise.resolve(getDetails("TAAifFP590")).then((data) => {
-  //   console.log(cleanDetails(data));
-  // });
+  const toggleFavorite = (id: string) => {
+    const newGames = top100.map(game => {
+      if(game.id === id) {
+        return {
+          ...game, isFavorited: !game.isFavorited
+        }
+      }
+      return game
+    })
+    setTop100(newGames)
+  }
 
   return (
     <div className="App">
@@ -60,7 +68,7 @@ function App() {
       </nav>
       <Routes>
         <Route path="/" element={<Top100 top100={top100} />} />
-        <Route path="/favorites" element={<Favorites favGames={favGames} />} />
+        <Route path="/favorites" element={<Favorites favGames={favGames} toggleFav={toggleFavorite} />} />
         <Route path="/details/:id" element={<Details />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

@@ -1,5 +1,6 @@
 import { CleanedGame } from "../../interfaces"
 import './GameCard.css'
+import { BsSuitHeartFill } from 'react-icons/bs'
 
 const GameCard = ({ name, price, rank, id, image, averageUserRating, numUserRatings }: CleanedGame) => {
     return (
@@ -10,6 +11,9 @@ const GameCard = ({ name, price, rank, id, image, averageUserRating, numUserRati
             <p>${price}</p>
             <p>{averageUserRating.toFixed(2)} / 5 ⭐️</p>
             <p>{numUserRatings} reviews</p>
+            <div className='large-font text-center'>
+                <BsSuitHeartFill className="heart" />
+            </div>
         </div>
     )
 }
