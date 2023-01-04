@@ -15,16 +15,17 @@ export const cleanTop100Data = (data: {games: Game[]}) => {
     return cleanList;
 }
 
-export const cleanDetails = (game: any) => {
+export const cleanDetails = (game: {games: GameDetails[]}) => {
+    console.log(game.games[0])
     const details = game.games[0]
     const cleanDetail = {
         name: details.name,
         rank: details.rank,
         id: details.id,
         price: details.price,
-        averageUserRating: details["average_user_rating"],
+        averageUserRating: +details["average_user_rating"].toFixed(2),
         numUserRatings: details["num_user_ratings"],
-        description: details.description,
+        description: details.description.replace("<p>", "").replace("</p>", ""),
         players: details.players,
         officialUrl: details["official_url"],
         playtime: details.playtime,

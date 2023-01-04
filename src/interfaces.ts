@@ -27,7 +27,21 @@ export interface GameDetails {
     num_user_ratings: number;
     description: string;
     players: string;
+    official_url: string;
+    playtime: string;
+    image_url: string;
+}
+
+export interface CleanDetails {
+    name: string;
+    price: string;
+    rank: number;
+    id: string;
+    image: string;
+    averageUserRating: number;
+    numUserRatings: number;
+    description: string;
+    players: string;
     officialUrl: string;
     playtime: string;
-    image: string;
 }

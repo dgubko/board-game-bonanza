@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Route, NavLink, Routes } from 'react-router-dom';
+import { Route, NavLink, Routes } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import { getTop100, getDetails } from "../../apiCalls/games";
 import { cleanTop100Data, cleanDetails } from "../../utilities/utilities";
-import { Game, CleanedGame, GameDetails } from '../../interfaces';
+import { Game, CleanedGame, GameDetails } from "../../interfaces";
 import { promises } from "stream";
 import Top100 from '../Top100/Top100';
 import Favorites from '../Favorites/Favorites';
@@ -40,7 +40,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Top100 top100={top100}/>}/>
         <Route path='/favorites' element={<Favorites favGames={favGames}/>}/>
-        {/* <Route index element={<Details />}/> */}
         <Route path='/details/:id' element={<Details />}/> 
       </Routes>
     </div>
