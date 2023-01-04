@@ -1,11 +1,19 @@
 import { CleanedGame } from "../../interfaces";
+import GameCard from "../GameCard/GameCard";
 
 const Top100 = ({top100}:{top100: CleanedGame[]}) => {
 
     const gameList = top100.map(game => {
-        console.log("game: ", game.name)
         return (
-            <p>{game.name}</p>
+            <GameCard 
+            name={game.name}
+            price={game.price}
+            rank={game.rank}
+            id={game.id}
+            image={game.image}
+            averageUserRating={game.averageUserRating}
+            numUserRatings={game.numUserRatings}
+            />
         )
     })
     return(
