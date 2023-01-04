@@ -1,8 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GameDetails, CleanDetails } from "../../interfaces";
 import { getDetails } from "../../apiCalls/games";
 import { cleanDetails } from "../../utilities/utilities";
+import { BsSuitHeartFill } from "react-icons/bs"
+import './Details.css'
+
 
 const Details = ({ details }: { details?: GameDetails }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
@@ -18,12 +21,11 @@ const Details = ({ details }: { details?: GameDetails }) => {
   return (
     <div>
       <h1></h1>
-      <div>
-        <button>Like</button>
-        <button>Go Back</button>
+      <div className='large-font text-center'>
+        <BsSuitHeartFill className="heart" />
       </div>
       <div>
-        <image />
+        <img src={gameInfo.image}></img>
         <div>
           <h2>{gameInfo.name}</h2>
           <p>Rank: {gameInfo.rank}</p>

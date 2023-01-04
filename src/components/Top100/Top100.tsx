@@ -1,5 +1,6 @@
 import { CleanedGame } from "../../interfaces";
 import GameCard from "../GameCard/GameCard";
+import { Link } from 'react-router-dom';
 
 const Top100 = ({top100}:{top100: CleanedGame[]}) => {
 
@@ -17,14 +18,9 @@ const Top100 = ({top100}:{top100: CleanedGame[]}) => {
             />
         )
     })
+
     return(
         <div>
-            <nav>Top 100's
-                <select name='view-menu'>
-                    <option value='Top 100'>Top 100's</option>
-                    <option value='Favorites'>Favorites</option>
-                </select>
-            </nav>
             {gameList}
         </div>
     )
