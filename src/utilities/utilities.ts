@@ -25,7 +25,7 @@ export const cleanDetails = (game: {games: GameDetails[]}) => {
         price: details.price,
         averageUserRating: +details["average_user_rating"].toFixed(2),
         numUserRatings: details["num_user_ratings"],
-        description: details.description.replace("<p>", "").replace("</p>", ""),
+        description: details["description_preview"],
         players: details.players,
         officialUrl: details["official_url"],
         playtime: details.playtime,
