@@ -9,6 +9,7 @@ import './Details.css'
 
 const Details = ({ details, top100 }: { details?: GameDetails, top100: CleanedGame[] }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
+  const [heartIconStatus, setHeartIconStatus] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
@@ -17,11 +18,15 @@ const Details = ({ details, top100 }: { details?: GameDetails, top100: CleanedGa
     });
   }, []);
 
+  const toggleHeartStatus = (() => {
+    setHeartIconStatus(!heartIconStatus)
+  })
+
   return (
     <div>
       <h1></h1>
       <div className='large-font text-center'>
-        <BsSuitHeartFill className="heart" />
+        <BsSuitHeartFill className={heartIconStatus ? 'heart active' : 'heart'} onClick={toggleHeartStatus} />
       </div>
       <div>
         <img src={gameInfo.image}></img>
