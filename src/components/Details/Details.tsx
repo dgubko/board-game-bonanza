@@ -1,20 +1,19 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { GameDetails, CleanDetails } from "../../interfaces";
+import { GameDetails, CleanDetails, CleanedGame } from "../../interfaces";
 import { getDetails } from "../../apiCalls/games";
 import { cleanDetails } from "../../utilities/utilities";
 import { BsSuitHeartFill } from "react-icons/bs"
 import './Details.css'
 
 
-const Details = ({ details }: { details?: GameDetails }) => {
+const Details = ({ details, top100 }: { details?: GameDetails, top100: CleanedGame[] }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
   const { id } = useParams();
 
   useEffect(() => {
     Promise.resolve(getDetails(id)).then((data) => {
-      console.log("game details", cleanDetails(data));
-      setGameInfo(cleanDetails(data));
+      setGameInfo(cleanDetails(data, top100));
     });
   }, []);
 

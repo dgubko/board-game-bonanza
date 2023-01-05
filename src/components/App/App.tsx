@@ -52,7 +52,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Top100 top100={top100} toggleFav={toggleFavorite}/>} />
         <Route path="/favorites" element={<Favorites top100={top100} toggleFav={toggleFavorite} />} />
-        <Route path="/details/:id" element={<Details />} />
+        <Route path="/details/:id" element={<Details top100={top100}/>} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>

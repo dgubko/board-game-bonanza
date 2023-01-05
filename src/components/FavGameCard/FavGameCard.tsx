@@ -25,7 +25,7 @@ const FavGameCard = ({ id, image, name, rating, toggleFav }: Props) => {
                     </div>
                 </div>
             </Link>
-            <div onClick={() => toggleFav(id)} className='heart'>
+            <div onClick={() => toggleFav(id)} className='large-font text-center'>
                 <BsSuitHeartFill className="heart" />
             </div>
         </div>
