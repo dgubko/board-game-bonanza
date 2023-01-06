@@ -8,10 +8,11 @@ import './Details.css'
 import '../Heart/Heart.css'
 
 
-const Details = ({ details, top100 }: { details?: GameDetails, top100: CleanedGame[] }) => {
+const Details = ({ details, top100, toggleFav }: { details?: GameDetails, top100: CleanedGame[], toggleFav: (id: string) => void }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
-  const [heartIconStatus, setHeartIconStatus] = useState(false);
   const { id } = useParams();
+
+  console.log('RIGHT HERE: ', top100[0])
 
   useEffect(() => {
     Promise.resolve(getDetails(id)).then((data) => {
@@ -19,15 +20,16 @@ const Details = ({ details, top100 }: { details?: GameDetails, top100: CleanedGa
     });
   }, []);
 
-  const toggleHeartStatus = (() => {
-    setHeartIconStatus(!heartIconStatus)
-  })
+  const toggleFavDetails = () => {
+    toggleFav(gameInfo.id)
+    setGameInfo({...gameInfo, isFavorited: !gameInfo.isFavorited})
+  }
 
   return (
-    <div>
+    < div >
       <h1></h1>
       <div className='large-font text-center'>
-        <BsSuitHeartFill className={heartIconStatus ? 'heart active' : 'heart'} onClick={toggleHeartStatus} />
+        <BsSuitHeartFill className={gameInfo.isFavorited ? 'heart active' : 'heart'} onClick={() => { toggleFavDetails() }} />
       </div>
       <div>
         <img src={gameInfo.image}></img>
@@ -43,7 +45,7 @@ const Details = ({ details, top100 }: { details?: GameDetails, top100: CleanedGa
           <p>Price: ${gameInfo.price}</p>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
