@@ -22,5 +22,3 @@ const GameCard = ({gameInfo, toggleFav}: {gameInfo: CleanedGame, toggleFav:(id: 
 }
 
 export default GameCard
-
-//className={heartIconStatus ? 'heart active' : 'heart'}
