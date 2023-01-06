@@ -20,16 +20,17 @@ const Details = ({ details, top100, toggleFav }: { details?: GameDetails, top100
     });
   }, []);
 
-  const toggleFavDetails = () => {
-    toggleFav(gameInfo.id)
-    setGameInfo({...gameInfo, isFavorited: !gameInfo.isFavorited})
-  }
+  useEffect(() => {
+    Promise.resolve(getDetails(id)).then((data) => {
+      setGameInfo(cleanDetails(data, top100));
+    });
+  }, [top100]);
 
   return (
     < div >
       <h1></h1>
       <div className='large-font text-center'>
-        <BsSuitHeartFill className={gameInfo.isFavorited ? 'heart active' : 'heart'} onClick={() => { toggleFavDetails() }} />
+        <BsSuitHeartFill className={gameInfo.isFavorited ? 'heart active' : 'heart'} onClick={() => { toggleFav(gameInfo.id) }} />
       </div>
       <div>
         <img src={gameInfo.image}></img>
