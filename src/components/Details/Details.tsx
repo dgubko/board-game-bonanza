@@ -5,6 +5,7 @@ import { getDetails } from "../../apiCalls/games";
 import { cleanDetails } from "../../utilities/utilities";
 import { BsSuitHeartFill } from "react-icons/bs"
 import './Details.css'
+import '../Heart/Heart.css'
 
 
 const Details = ({ details, top100 }: { details?: GameDetails, top100: CleanedGame[] }) => {
