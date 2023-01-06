@@ -10,8 +10,8 @@ export const PageNotFound = () => {
         We're sorry, the page you requested could not be found. Please go back
         to the homepage.
       </p>
-      <Link to="/">
-        <button>Go back</button>
+      <Link className="button" to="/">
+        Go back
       </Link>
     </div>
   );

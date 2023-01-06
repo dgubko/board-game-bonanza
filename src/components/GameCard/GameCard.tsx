@@ -16,7 +16,12 @@ const GameCard = ({
     navigate(`/details/${id}`);
   };
   return (
-    <div className="gameCard-container" onClick={handleClick}>
+    <div
+      className="gameCard-container"
+      onClick={handleClick}
+      tabIndex={0}
+      role="button"
+    >
       <p>Rank: #{rank}</p>
       <img src={image} />
       <h3>{name}</h3>
