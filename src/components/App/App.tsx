@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, NavLink, Routes } from "react-router-dom";
-import logo from "./logo.svg";
 import "./App.css";
-import { getTop100, getDetails } from "../../apiCalls/games";
-import { cleanTop100Data, cleanDetails } from "../../utilities/utilities";
-import { Game, CleanedGame, GameDetails } from "../../interfaces";
-import { promises } from "stream";
+import { getTop100 } from "../../apiCalls/games";
+import { cleanTop100Data } from "../../utilities/utilities";
+import { CleanedGame } from "../../interfaces";
 import Top100 from "../Top100/Top100";
 import Favorites from "../Favorites/Favorites";
 import Details from "../Details/Details";
@@ -16,9 +14,7 @@ const dice = require("../../images/dice.png");
 
 function App() {
   const [top100, setTop100] = useState<CleanedGame[]>([]);
-  const [details, setDetails] = useState<GameDetails>();
   const [bWord, setBWord] = useState<string>("Bonanza");
-  const [favGames, setFavGames] = useState<CleanedGame[]>([])
   const [error, setError] = useState<boolean>(false)
 
   useEffect(() => {

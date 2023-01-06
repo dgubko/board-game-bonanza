@@ -5,14 +5,13 @@ import { getDetails } from "../../apiCalls/games";
 import { cleanDetails } from "../../utilities/utilities";
 import { BsSuitHeartFill } from "react-icons/bs"
 import './Details.css'
-import Error from '../Error/Error'
 
 
-const Details = ({ details, top100, updateError}: { details?: GameDetails, top100: CleanedGame[], updateError: () => void  }) => {
+
+const Details = ({top100, updateError}: { top100: CleanedGame[], updateError: () => void  }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
   const [heartIconStatus, setHeartIconStatus] = useState(false);
   const { id } = useParams();
-  // const [error, setError] = useState<boolean>(false)
 
   useEffect(() => {
     Promise.resolve(getDetails(id)).then((data) => {

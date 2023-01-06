@@ -4,12 +4,11 @@ export const getTop100 = async () => {
     if (response.status > 400) {
         throw response
     }
-    // throw new Exception()
     return response.json()
 }
 
 export const getDetails = async (id: any) => {
-    const url = `https://api.boardgameatlas.co/api/search?ids=${id}&client_id=NO0Fq8pQcF`
+    const url = `https://api.boardgameatlas.com/api/search?ids=${id}&client_id=NO0Fq8pQcF`
     const response = await fetch(url)
     if (response.status > 400) {
         throw response
