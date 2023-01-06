@@ -7,7 +7,8 @@ import { BsSuitHeartFill } from "react-icons/bs"
 import './Details.css'
 
 
-const Details = ({ details, top100 }: { details?: GameDetails, top100: CleanedGame[] }) => {
+
+const Details = ({top100, updateError}: { top100: CleanedGame[], updateError: () => void  }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
   const [heartIconStatus, setHeartIconStatus] = useState(false);
   const { id } = useParams();
@@ -15,12 +16,18 @@ const Details = ({ details, top100 }: { details?: GameDetails, top100: CleanedGa
   useEffect(() => {
     Promise.resolve(getDetails(id)).then((data) => {
       setGameInfo(cleanDetails(data, top100));
-    });
+    })
+    .catch(response => {
+      console.log(response.status)
+      updateError()
+    })
   }, []);
 
   const toggleHeartStatus = (() => {
     setHeartIconStatus(!heartIconStatus)
   })
+
+
 
   return (
     <div>
