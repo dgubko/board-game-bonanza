@@ -49,9 +49,13 @@ function App() {
     setError(false)
   }
 
+  const updateError = () => {
+    setError(true)
+  }
+
   return (
     <div className="App">
-      {error && <Error closeError={closeError} />}
+      {error && <Error closeError={closeError}/>}
       <header>
         <img src={dice} />
         <h1>Boardgame {bWord}</h1>
@@ -63,7 +67,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Top100 top100={top100} toggleFav={toggleFavorite}/>} />
         <Route path="/favorites" element={<Favorites top100={top100} toggleFav={toggleFavorite} />} />
-        <Route path="/details/:id" element={<Details top100={top100}/>} />
+        <Route path="/details/:id" element={<Details top100={top100} updateError={updateError}/>} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
