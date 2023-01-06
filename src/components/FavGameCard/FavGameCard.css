@@ -1,0 +1,14 @@
+.fav-game-card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border: 4px solid #174550;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
+}

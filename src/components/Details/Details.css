@@ -1,21 +1,36 @@
-.large-font{
-    font-size: 500px;
-    border: none;
-    background-color: white;
-  }
+.large-font {
+  font-size: 500px;
+  border: none;
+  background-color: white;
+}
 
-  .heart.active{
-    animation:like 0.5s 1;
-    fill:red;
+.heart.active {
+  animation: like 0.5s 1;
+  fill: red;
+}
+
+.heart {
+  transition: all 0.5s;
+}
+
+@-webkit-keyframes like {
+  0% {
+    transform: scale(1);
   }
-  
-  .heart{
-    transition:all 0.5s;
+  90% {
+    transform: scale(1.2);
   }
-  
-  
-  @-webkit-keyframes like {
-    0%   { transform: scale(1); }
-    90%   { transform: scale(1.2); }
-    100% { transform: scale(1.1); }
+  100% {
+    transform: scale(1.1);
   }
+}
+
+.details-description {
+  background-color: #f7f5fb;
+  border: 4px solid #174550;
+  border-radius: 8px;
+}
+
+.details-page-container {
+  display: flex;
+}
