@@ -10,13 +10,15 @@ const GameCard = ({gameInfo, toggleFav}: {gameInfo: CleanedGame, toggleFav:(id: 
     navigate(`/details/${gameInfo.id}`);
   };
     return (
-        <div className="gameCard-container" onClick={handleClick}>
-            <p>Rank: #{gameInfo.rank}</p>
-            <img src={gameInfo.image} />
-            <h3>{gameInfo.name}</h3>
-            <p>${gameInfo.price}</p>
-            <p>{gameInfo.averageUserRating.toFixed(2)} / 5 ⭐️</p>
-            <p>{gameInfo.numUserRatings} reviews</p>
+        <div className="gameCard-container">
+            <div className="gameCard-info" onClick={handleClick}>
+                <p>Rank: #{gameInfo.rank}</p>
+                <img src={gameInfo.image} />
+                <h3>{gameInfo.name}</h3>
+                <p>${gameInfo.price}</p>
+                <p>{gameInfo.averageUserRating.toFixed(2)} / 5 ⭐️</p>
+                <p>{gameInfo.numUserRatings} reviews</p>
+            </div>
             <div className='large-font text-center'>
                 <BsSuitHeartFill className={gameInfo.isFavorited ? 'heart active' : 'heart'} onClick={() => toggleFav(gameInfo.id)}/>
             </div>

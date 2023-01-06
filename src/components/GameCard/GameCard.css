@@ -1,6 +1,13 @@
-.gameCard-container{
+.gameCard-info{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    margin-right: 30px;
+}
+
+.gameCard-container {
+    display: flex;
     align-items: center;
     width: 100vw;
 }
