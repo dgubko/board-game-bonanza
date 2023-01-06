@@ -29,6 +29,7 @@ function App() {
   }, []);
 
   const toggleFavorite = (id: string) => {
+    console.log("toggle is here!")
     const newGames = top100.map(game => {
       if(game.id === id) {
         console.log(game.isFavorited)
@@ -63,7 +64,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Top100 top100={top100} toggleFav={toggleFavorite}/>} />
         <Route path="/favorites" element={<Favorites top100={top100} toggleFav={toggleFavorite} />} />
-        <Route path="/details/:id" element={<Details top100={top100} updateError={updateError}/>} />
+        <Route path="/details/:id" element={<Details top100={top100} toggleFav={toggleFavorite} updateError={updateError}/>} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>

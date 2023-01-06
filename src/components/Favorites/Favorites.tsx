@@ -5,7 +5,7 @@ const Favorites = ({top100, toggleFav}:{top100: CleanedGame[], toggleFav: (id: s
     
     let favGameCards = top100.reduce((acc: JSX.Element[], game) => {
         if (game.isFavorited) {
-            acc.push(<FavGameCard id={game.id} image={game.image} name={game.name} rating={game.averageUserRating} toggleFav={toggleFav}/>)
+            acc.push(<FavGameCard id={game.id} image={game.image} name={game.name} rating={game.averageUserRating} isFavorited={game.isFavorited} toggleFav={toggleFav}/>)
         }
         return acc;
     },[])
