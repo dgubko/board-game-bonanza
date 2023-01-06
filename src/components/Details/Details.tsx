@@ -8,7 +8,6 @@ import './Details.css'
 import '../Heart/Heart.css'
 
 
-const Details = ({ details, top100, toggleFav }: { details?: GameDetails, top100: CleanedGame[], toggleFav: (id: string) => void }) => {
 const Details = ({top100, updateError, toggleFav}: { top100: CleanedGame[], updateError: () => void, toggleFav: (id: string) => void }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
   const { id } = useParams();
