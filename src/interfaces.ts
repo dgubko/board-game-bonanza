@@ -27,7 +27,7 @@ export interface GameDetails {
     price: string;
     average_user_rating: number;
     num_user_ratings: number;
-    description: string;
+    description_preview: string;
     players: string;
     official_url: string;
     playtime: string;

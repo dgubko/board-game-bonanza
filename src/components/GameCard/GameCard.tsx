@@ -1,13 +1,16 @@
 import { CleanedGame } from "../../interfaces"
+import { useNavigate } from "react-router-dom";
 import './GameCard.css'
 import { BsSuitHeartFill } from 'react-icons/bs'
 import '../Heart/Heart.css'
 
 const GameCard = ({gameInfo, toggleFav}: {gameInfo: CleanedGame, toggleFav:(id: string) => void}) => {
-
-    console.log()
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/details/${id}`);
+  };
     return (
-        <div className="gameCard-container">
+        <div className="gameCard-container" onClick={handleClick}>
             <p>Rank: #{gameInfo.rank}</p>
             <img src={gameInfo.image} />
             <h3>{gameInfo.name}</h3>
@@ -20,5 +23,4 @@ const GameCard = ({gameInfo, toggleFav}: {gameInfo: CleanedGame, toggleFav:(id: 
         </div>
     )
 }
-
-export default GameCard
+export default GameCard;
