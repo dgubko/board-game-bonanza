@@ -9,6 +9,7 @@ import '../Heart/Heart.css'
 
 
 const Details = ({ details, top100, toggleFav }: { details?: GameDetails, top100: CleanedGame[], toggleFav: (id: string) => void }) => {
+const Details = ({top100, updateError, toggleFav}: { top100: CleanedGame[], updateError: () => void, toggleFav: (id: string) => void }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
   const { id } = useParams();
 
@@ -17,7 +18,11 @@ const Details = ({ details, top100, toggleFav }: { details?: GameDetails, top100
   useEffect(() => {
     Promise.resolve(getDetails(id)).then((data) => {
       setGameInfo(cleanDetails(data, top100));
-    });
+    })
+    .catch(response => {
+      console.log(response.status)
+      updateError()
+    })
   }, []);
 
   useEffect(() => {
@@ -25,6 +30,8 @@ const Details = ({ details, top100, toggleFav }: { details?: GameDetails, top100
       setGameInfo(cleanDetails(data, top100));
     });
   }, [top100]);
+
+
 
   return (
     < div >
