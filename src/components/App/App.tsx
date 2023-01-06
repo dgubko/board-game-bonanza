@@ -11,6 +11,7 @@ import Favorites from "../Favorites/Favorites";
 import Details from "../Details/Details";
 import { getRandomWord } from "../../utilities/utilities";
 import { PageNotFound } from "../PageNotFound/PageNotFound";
+import Error from '../Error/Error'
 const dice = require("../../images/dice.png");
 
 function App() {
@@ -18,11 +19,16 @@ function App() {
   const [details, setDetails] = useState<GameDetails>();
   const [bWord, setBWord] = useState<string>("Bonanza");
   const [favGames, setFavGames] = useState<CleanedGame[]>([])
+  const [error, setError] = useState<boolean>(false)
 
   useEffect(() => {
     Promise.resolve(getTop100()).then((data) => {
       setTop100(cleanTop100Data(data));
-    });
+    })
+    .catch(response => {
+      console.log(response.status)
+      setError(true)
+    })
     setBWord(getRandomWord());
   }, []);
 
@@ -39,8 +45,13 @@ function App() {
     setTop100(newGames)
   }
 
+  const closeError = () => {
+    setError(false)
+  }
+
   return (
     <div className="App">
+      {error && <Error closeError={closeError} />}
       <header>
         <img src={dice} />
         <h1>Boardgame {bWord}</h1>
