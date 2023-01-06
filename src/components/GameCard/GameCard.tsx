@@ -7,7 +7,7 @@ import '../Heart/Heart.css'
 const GameCard = ({gameInfo, toggleFav}: {gameInfo: CleanedGame, toggleFav:(id: string) => void}) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/details/${id}`);
+    navigate(`/details/${gameInfo.id}`);
   };
     return (
         <div className="gameCard-container" onClick={handleClick}>
