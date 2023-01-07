@@ -18,6 +18,7 @@ export interface CleanedGame {
     numUserRatings: number;
     isFavorited: boolean;
     toggleFav?: (id: string) => void;
+    comments?: Review[];
 }
 
 export interface GameDetails {
@@ -48,4 +49,11 @@ export interface CleanDetails {
     playtime: string;
     isFavorited: boolean;
     toggleFav?: (id: string) => void;
+    comments?: Review[] | []
 }
+
+export interface Review {
+    name: string;
+    comment: string;
+    commentId: number;
+  }
