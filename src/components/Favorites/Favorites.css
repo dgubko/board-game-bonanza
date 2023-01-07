@@ -6,3 +6,15 @@
   max-width: 1200px;
   margin: auto;
 }
+
+.fav-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-fav-message {
+  margin-top: 20%;
+  color: #174550
+}

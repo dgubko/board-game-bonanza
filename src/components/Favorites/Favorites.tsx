@@ -26,7 +26,12 @@ const Favorites = ({
     return acc;
   }, []);
 
-  return <div className="favorites">{favGameCards}</div>;
+  return (
+    <div className="fav-wrapper">
+    {favGameCards.length === 0 && <h1 className="no-fav-message">You currently have no favorite games. Go and favorite some cool games!</h1>}
+    <div className="favorites">{favGameCards}</div>
+  </div>
+  ) 
 };
 
 export default Favorites;
