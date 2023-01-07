@@ -71,8 +71,10 @@ const Details = ({
             />
           </div>
         </div>
-        <Form addComment={addComment} id={gameInfo.id}/>
-        <Comments id={gameInfo.id} deleteComment={deleteComment} comments={gameInfo.comments ? gameInfo.comments : []}/>
+        <div className="form-comment-components">
+          <Form addComment={addComment} id={gameInfo.id}/>
+          <Comments id={gameInfo.id} deleteComment={deleteComment} comments={gameInfo.comments ? gameInfo.comments : []}/>
+        </div>
       </div>}
     </div>
   );

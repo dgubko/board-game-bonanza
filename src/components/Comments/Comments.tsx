@@ -1,5 +1,6 @@
 import { Review } from "../../interfaces"
 import CommentCard from '../CommentCard/CommentCard'
+import './Comments.css';
 
 const Comments = ({ comments, id, deleteComment }: {comments: Review[], id: string, deleteComment: (commentId: number, id: string) => void}) => {
   const allComments = comments.map(comment => {
@@ -14,7 +15,7 @@ const Comments = ({ comments, id, deleteComment }: {comments: Review[], id: stri
   })
 
   return (
-    <div>
+    <div className="all-comments">
       {allComments}
     </div>
   )

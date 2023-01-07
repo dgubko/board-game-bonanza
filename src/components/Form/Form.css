@@ -8,6 +8,8 @@
   border-radius: 8px;
   width: fit-content;
   padding: 2%;
+  max-width: 50%;
+  max-height: 400px;
 }
 
 .form-header {
@@ -32,5 +34,8 @@
 
 .comment-input {
   margin-bottom: 1%;
-  
+  height: 100px;
+  width: 250px;
+  max-width: 90%;
+  max-height: 60%;
 }

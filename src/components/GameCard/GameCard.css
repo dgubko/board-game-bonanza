@@ -28,7 +28,7 @@
 .gameCard-container > svg {
   position: absolute;
   right: 24px;
-  bottom: 24px;
+
 }
 
 .rank-number {
@@ -61,4 +61,8 @@
 img {
   height: 128px;
   width: auto;
+}
+
+p {
+  font-size: 18px;
 }
