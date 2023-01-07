@@ -55,7 +55,7 @@ const Details = ({
           <p>About: {gameInfo.description}</p>
           <p>Players: {gameInfo.players}</p>
           <p>Playtime: {gameInfo.playtime}</p>
-          <p>Official site: {gameInfo.officialUrl}</p>
+          <p>Official site: <a href={gameInfo.officialUrl}>{gameInfo.officialUrl}</a></p>
           <p>Price: ${gameInfo.price}</p>
           <BsSuitHeartFill
             className={gameInfo.isFavorited ? "heart active" : "heart"}
