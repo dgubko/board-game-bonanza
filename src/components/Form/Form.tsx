@@ -7,6 +7,7 @@ const Form = ({ id, addComment }: {id:string; addComment: (review: Review, id: s
   
 
   const [review, setReview] = useState<Review>({name: "", comment: "", commentId: 0})
+  const [userError, setUserError] = useState<boolean>(false)
 
   const handleChange = (event: {target: any}) => {
     const { name, value } = event.target
@@ -14,8 +15,13 @@ const Form = ({ id, addComment }: {id:string; addComment: (review: Review, id: s
   }
 
   const submitComment = () => {
-    addComment(review, id)
-    clearInputs()
+    if(!review.name || !review.comment) {
+      setUserError(true)
+    } else {
+      addComment(review, id)
+      setUserError(false)
+      clearInputs()
+    }
   }
 
   const clearInputs = () => {
@@ -24,6 +30,7 @@ const Form = ({ id, addComment }: {id:string; addComment: (review: Review, id: s
 
   return (
     <div className="form">
+      {userError && <p>Please enter full review</p>}
       <input
         type='text'
         name='name'
