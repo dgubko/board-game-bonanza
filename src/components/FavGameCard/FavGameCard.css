@@ -1,3 +1,7 @@
+.fav-game-card-wrapper {
+  position: relative;
+}
+
 .fav-game-card {
   background-color: white;
   display: flex;
@@ -13,21 +17,8 @@
   color: black;
 }
 
-/* .heart-container {
-    z-index: -1;
-    position: relative;
-}
-
-.heart-container:hover {
-    cursor: pointer;
-} */
-
-.heart {
-    width: 50px;
-    z-index: 9999;
-    position: relative;
-}
-
-.heart:hover {
-    cursor: pointer;
+.fav-game-card-wrapper .heart {
+  bottom: 16px;
+  right: 16px;
+  position: absolute;
 }

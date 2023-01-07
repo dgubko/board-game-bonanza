@@ -4,33 +4,21 @@
   background-color: white;
 }
 
-.heart.active {
-  animation: like 0.5s 1;
-  fill: red;
-}
-
-.heart {
-  transition: all 0.5s;
-}
-
-@-webkit-keyframes like {
-  0% {
-    transform: scale(1);
-  }
-  90% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
 .details-description {
   background-color: #f7f5fb;
   border: 4px solid #174550;
   border-radius: 8px;
+  position: relative;
+  padding: 16px 32px;
+  margin-left: 24px;
 }
 
 .details-page-container {
   display: flex;
+}
+
+.details-description .heart {
+  position: absolute;
+  top: 24px;
+  right: 24px;
 }
