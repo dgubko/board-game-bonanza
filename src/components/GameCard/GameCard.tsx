@@ -1,28 +1,42 @@
-import { CleanedGame } from "../../interfaces"
+import { CleanedGame } from "../../interfaces";
 import { useNavigate } from "react-router-dom";
-import './GameCard.css'
-import { BsSuitHeartFill } from 'react-icons/bs'
-import '../Heart/Heart.css'
+import "./GameCard.css";
+import { BsSuitHeartFill } from "react-icons/bs";
 
-const GameCard = ({gameInfo, toggleFav}: {gameInfo: CleanedGame, toggleFav:(id: string) => void}) => {
+const GameCard = ({
+  rank,
+  id,
+  image,
+  name,
+  price,
+  averageUserRating,
+  numUserRatings,
+  isFavorited,
+  toggleFav,
+}: CleanedGame) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/details/${gameInfo.id}`);
+    navigate(`/details/${id}`);
   };
-    return (
-        <div className="gameCard-container">
-            <div className="gameCard-info" onClick={handleClick}>
-                <p>Rank: #{gameInfo.rank}</p>
-                <img src={gameInfo.image} />
-                <h3>{gameInfo.name}</h3>
-                <p>${gameInfo.price}</p>
-                <p>{gameInfo.averageUserRating.toFixed(2)} / 5 ⭐️</p>
-                <p>{gameInfo.numUserRatings} reviews</p>
-            </div>
-            <div className='large-font text-center'>
-                <BsSuitHeartFill className={gameInfo.isFavorited ? 'heart active' : 'heart'} onClick={() => toggleFav(gameInfo.id)}/>
-            </div>
+  return (
+    <div className="gameCard-container">
+      <div onClick={handleClick}>
+        <div className="rank-number">
+          <p>Rank: #{rank}</p>
         </div>
-    )
-}
+        <img src={image} />
+        <h3>{name}</h3>
+        <p>${price}</p>
+        <p>{averageUserRating.toFixed(2)} / 5 ⭐️</p>
+        <p>{numUserRatings} reviews</p>
+      </div>
+      {toggleFav && (
+        <BsSuitHeartFill
+          className={isFavorited ? "heart active" : "heart"}
+          onClick={() => toggleFav(id)}
+        />
+      )}
+    </div>
+  );
+};
 export default GameCard;

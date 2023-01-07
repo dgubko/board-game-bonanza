@@ -3,25 +3,33 @@ import { useEffect, useState } from "react";
 import { GameDetails, CleanDetails, CleanedGame } from "../../interfaces";
 import { getDetails } from "../../apiCalls/games";
 import { cleanDetails } from "../../utilities/utilities";
-import { BsSuitHeartFill } from "react-icons/bs"
-import './Details.css'
-import '../Heart/Heart.css'
+import { BsSuitHeartFill } from "react-icons/bs";
+import "./Details.css";
+import "../Heart/Heart.css";
 
-
-const Details = ({top100, updateError, toggleFav}: { top100: CleanedGame[], updateError: () => void, toggleFav: (id: string) => void }) => {
+const Details = ({
+  top100,
+  updateError,
+  toggleFav,
+}: {
+  top100: CleanedGame[];
+  updateError: () => void;
+  toggleFav: (id: string) => void;
+}) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
   const { id } = useParams();
 
-  console.log('RIGHT HERE: ', top100[0])
+  console.log("RIGHT HERE: ", top100[0]);
 
   useEffect(() => {
-    Promise.resolve(getDetails(id)).then((data) => {
-      setGameInfo(cleanDetails(data, top100));
-    })
-    .catch(response => {
-      console.log(response.status)
-      updateError()
-    })
+    Promise.resolve(getDetails(id))
+      .then((data) => {
+        setGameInfo(cleanDetails(data, top100));
+      })
+      .catch((response) => {
+        console.log(response.status);
+        updateError();
+      });
   }, []);
 
   useEffect(() => {
@@ -30,17 +38,12 @@ const Details = ({top100, updateError, toggleFav}: { top100: CleanedGame[], upda
     });
   }, [top100]);
 
-
-
   return (
-    < div >
+    <div>
       <h1></h1>
-      <div className='large-font text-center'>
-        <BsSuitHeartFill className={gameInfo.isFavorited ? 'heart active' : 'heart'} onClick={() => { toggleFav(gameInfo.id) }} />
-      </div>
-      <div>
+      <div className="details-page-container">
         <img src={gameInfo.image}></img>
-        <div>
+        <div className="details-description">
           <h2>{gameInfo.name}</h2>
           <p>Rank: {gameInfo.rank}</p>
           <p>Avg user rating: {gameInfo.averageUserRating}</p>
@@ -50,9 +53,15 @@ const Details = ({top100, updateError, toggleFav}: { top100: CleanedGame[], upda
           <p>Playtime: {gameInfo.playtime}</p>
           <p>Official site: {gameInfo.officialUrl}</p>
           <p>Price: ${gameInfo.price}</p>
+          <BsSuitHeartFill
+            className={gameInfo.isFavorited ? "heart active" : "heart"}
+            onClick={() => {
+              toggleFav(gameInfo.id);
+            }}
+          />
         </div>
       </div>
-    </div >
+    </div>
   );
 };
 

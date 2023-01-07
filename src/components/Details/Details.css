@@ -1,0 +1,24 @@
+.large-font {
+  font-size: 500px;
+  border: none;
+  background-color: white;
+}
+
+.details-description {
+  background-color: #f7f5fb;
+  border: 4px solid #174550;
+  border-radius: 8px;
+  position: relative;
+  padding: 16px 32px;
+  margin-left: 24px;
+}
+
+.details-page-container {
+  display: flex;
+}
+
+.details-description .heart {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}

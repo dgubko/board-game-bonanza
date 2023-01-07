@@ -1,17 +1,64 @@
-.gameCard-info{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    margin-right: 30px;
-}
-
 .gameCard-container {
-    display: flex;
-    align-items: center;
-    width: 100vw;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.gameCard-container > div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+  background-color: white;
+  border: 4px solid #174550;
+  border-radius: 8px;
+  margin: 12px;
+  padding: 8px;
+  cursor: pointer;
+  width: 100%;
 }
 
-img{
-    height: 25vw;
+.gameCard-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  margin-right: 30px;
+}
+
+.gameCard-container > svg {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+}
+
+.rank-number {
+  clip-path: polygon(
+    50% 0,
+    35% 15%,
+    15% 15%,
+    15% 35%,
+    0 50%,
+    15% 65%,
+    15% 85%,
+    35% 85%,
+    50% 100%,
+    65% 85%,
+    85% 85%,
+    85% 65%,
+    100% 50%,
+    85% 35%,
+    85% 15%,
+    65% 15%
+  );
+  background-color: rgb(255, 164, 44);
+  padding: 24px;
+  position: absolute;
+  top: -8px;
+  left: -40px;
+  transform: rotate(-25deg);
+}
+
+img {
+  height: 128px;
+  width: auto;
 }

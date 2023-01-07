@@ -1,18 +1,24 @@
-/* .heart-container {
-    z-index: -1;
-    position: relative;
+.fav-game-card-wrapper {
+  position: relative;
 }
 
-.heart-container:hover {
-    cursor: pointer;
-} */
-
-.heart {
-    width: 50px;
-    z-index: 9999;
-    position: relative;
+.fav-game-card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border: 4px solid #174550;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
 }
 
-.heart:hover {
-    cursor: pointer;
+.fav-game-card-wrapper .heart {
+  bottom: 16px;
+  right: 16px;
+  position: absolute;
 }
