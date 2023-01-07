@@ -20,7 +20,7 @@ const GameCard = ({
   };
   return (
     <div className="gameCard-container">
-      <div onClick={handleClick}>
+      <button onClick={handleClick}>
         <div className="rank-number">
           <p>Rank: #{rank}</p>
         </div>
@@ -29,7 +29,7 @@ const GameCard = ({
         <p>${price}</p>
         <p>{averageUserRating.toFixed(2)} / 5 ⭐️</p>
         <p>{numUserRatings} reviews</p>
-      </div>
+      </button>
       {toggleFav && (
         <BsSuitHeartFill
           className={isFavorited ? "heart active" : "heart"}

@@ -6,6 +6,7 @@ import { cleanDetails } from "../../utilities/utilities";
 import { BsSuitHeartFill } from "react-icons/bs";
 import "./Details.css";
 import "../Heart/Heart.css";
+const rollingDice = require("../../images/rolling-dice.gif")
 
 const Details = ({
   top100,
@@ -17,6 +18,7 @@ const Details = ({
   toggleFav: (id: string) => void;
 }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
+  const [isLoading, setisLoading] = useState<boolean>(true);
   const { id } = useParams();
 
   console.log("RIGHT HERE: ", top100[0]);
@@ -25,10 +27,12 @@ const Details = ({
     Promise.resolve(getDetails(id))
       .then((data) => {
         setGameInfo(cleanDetails(data, top100));
+        setisLoading(false)
       })
       .catch((response) => {
         console.log(response.status);
         updateError();
+        setisLoading(false)
       });
   }, []);
 
@@ -40,8 +44,8 @@ const Details = ({
 
   return (
     <div>
-      <h1></h1>
-      <div className="details-page-container">
+      {isLoading && <div className="is-loading-wrapper">Loading...</div>}
+      {!isLoading && <div className="details-page-container">
         <img src={gameInfo.image}></img>
         <div className="details-description">
           <h2>{gameInfo.name}</h2>
@@ -60,7 +64,7 @@ const Details = ({
             }}
           />
         </div>
-      </div>
+      </div>}
     </div>
   );
 };

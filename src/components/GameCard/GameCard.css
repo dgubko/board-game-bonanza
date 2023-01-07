@@ -3,7 +3,7 @@
   align-items: center;
   position: relative;
 }
-.gameCard-container > div {
+.gameCard-container > button {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
