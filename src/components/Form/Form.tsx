@@ -1,27 +1,25 @@
 import { useState } from "react"
 import './Form.css'
+import { Review } from '../../interfaces'
 
 
-const Form = () => {
-  interface Review {
-    name: string;
-    comment: string;
-  }
+const Form = ({ id, addComment }: {id:string; addComment: (review: Review, id: string) => void}) => {
+  
 
-  const [review, setReview] = useState<Review>({name: "", comment: ""})
+  const [review, setReview] = useState<Review>({name: "", comment: "", commentId: 0})
 
   const handleChange = (event: {target: any}) => {
     const { name, value } = event.target
-    setReview(prevState => ({...prevState, [name]: value}))
+    setReview(prevState => ({...prevState, [name]: value, commentId: Date.now()}))
   }
 
   const submitComment = () => {
-    addComment()
+    addComment(review, id)
     clearInputs()
   }
 
   const clearInputs = () => {
-    setReview({name: "", comment: ""})
+    setReview({name: "", comment: "", commentId: 0})
   }
 
   return (

@@ -7,22 +7,24 @@ import { BsSuitHeartFill } from "react-icons/bs";
 import "./Details.css";
 import "../Heart/Heart.css";
 import Form from '../Form/Form'
+import { Review } from '../../interfaces'
+import Comments from '../Comments/Comments'
 const rollingDice = require("../../images/rolling-dice.gif")
 
 const Details = ({
   top100,
   updateError,
   toggleFav,
+  addComment
 }: {
   top100: CleanedGame[];
   updateError: () => void;
   toggleFav: (id: string) => void;
+  addComment: (review: Review, id: string) => void
 }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
   const [isLoading, setisLoading] = useState<boolean>(true);
   const { id } = useParams();
-
-  console.log("RIGHT HERE: ", top100[0]);
 
   useEffect(() => {
     Promise.resolve(getDetails(id))
@@ -67,7 +69,8 @@ const Details = ({
             />
           </div>
         </div>
-        <Form />
+        <Form addComment={addComment} id={gameInfo.id}/>
+        <Comments comments={gameInfo.comments ? gameInfo.comments : []}/>
       </div>}
     </div>
   );
