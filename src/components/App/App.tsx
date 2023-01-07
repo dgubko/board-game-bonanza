@@ -11,6 +11,7 @@ import Details from "../Details/Details";
 import { getRandomWord } from "../../utilities/utilities";
 import { PageNotFound } from "../PageNotFound/PageNotFound";
 import Error from "../Error/Error";
+import { Review } from '../../interfaces'
 const dice = require("../../images/dice.png");
 
 
@@ -56,6 +57,29 @@ function App() {
     setError(true);
   };
 
+  const addComment = (review : Review, id: string) => {
+    const newGames = top100.map((game) => {
+      if (game.id === id) {
+        game.comments?.push(review)
+      }
+      return game;
+    })
+    setTop100(newGames)
+  }
+
+  const deleteComment = (commentId: number, id: string) => {
+    const newGames = top100.map(game => {
+      if(game.id === id) {
+        const newComments = game.comments?.filter(comment => {
+         return comment.commentId !== commentId
+        })
+        game.comments = newComments
+      }
+      return game
+    })
+    setTop100(newGames)
+  }
+
   return (
     <div className="App">
       {error && <Error closeError={closeError} />}
@@ -87,6 +111,8 @@ function App() {
               top100={top100}
               toggleFav={toggleFavorite}
               updateError={updateError}
+              addComment={addComment}
+              deleteComment={deleteComment}
             />
           }
         />
