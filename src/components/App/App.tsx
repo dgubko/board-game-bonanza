@@ -11,15 +11,16 @@ import Details from "../Details/Details";
 import { getRandomWord } from "../../utilities/utilities";
 import { PageNotFound } from "../PageNotFound/PageNotFound";
 import Error from "../Error/Error";
-import { Review } from '../../interfaces'
+import { Review } from "../../interfaces";
+import { Search } from "../Search/Search";
 const dice = require("../../images/dice.png");
-
 
 function App() {
   const [top100, setTop100] = useState<CleanedGame[]>([]);
   const [bWord, setBWord] = useState<string>("Bonanza");
   const [error, setError] = useState<boolean>(false);
   const [isLoading, setisLoading] = useState<boolean>(true);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     Promise.resolve(getTop100())
@@ -57,28 +58,31 @@ function App() {
     setError(true);
   };
 
-  const addComment = (review : Review, id: string) => {
+  const addComment = (review: Review, id: string) => {
     const newGames = top100.map((game) => {
       if (game.id === id) {
-        game.comments?.push(review)
+        game.comments?.push(review);
       }
       return game;
-    })
-    setTop100(newGames)
-  }
+    });
+    setTop100(newGames);
+  };
 
   const deleteComment = (commentId: number, id: string) => {
-    const newGames = top100.map(game => {
-      if(game.id === id) {
-        const newComments = game.comments?.filter(comment => {
-         return comment.commentId !== commentId
-        })
-        game.comments = newComments
+    const newGames = top100.map((game) => {
+      if (game.id === id) {
+        const newComments = game.comments?.filter((comment) => {
+          return comment.commentId !== commentId;
+        });
+        game.comments = newComments;
       }
-      return game
-    })
-    setTop100(newGames)
-  }
+      return game;
+    });
+    setTop100(newGames);
+  };
+  const filtered = top100.filter((game) => {
+    return game.name.toLowerCase().includes(query.toLowerCase());
+  });
 
   return (
     <div className="App">
@@ -86,6 +90,7 @@ function App() {
       <header>
         <img src={dice} />
         <h1>Boardgame {bWord}</h1>
+        <Search query={query} setQuery={setQuery} />
       </header>
       <nav>
         <NavLink className="button" to="/">
@@ -98,7 +103,13 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Top100 top100={top100} toggleFav={toggleFavorite} isLoading={isLoading} />}
+          element={
+            <Top100
+              top100={filtered}
+              toggleFav={toggleFavorite}
+              isLoading={isLoading}
+            />
+          }
         />
         <Route
           path="/favorites"
