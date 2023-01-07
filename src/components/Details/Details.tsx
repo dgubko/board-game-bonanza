@@ -15,12 +15,14 @@ const Details = ({
   top100,
   updateError,
   toggleFav,
-  addComment
+  addComment,
+  deleteComment
 }: {
   top100: CleanedGame[];
   updateError: () => void;
   toggleFav: (id: string) => void;
-  addComment: (review: Review, id: string) => void
+  addComment: (review: Review, id: string) => void;
+  deleteComment: (commentId: number, id: string) => void;
 }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
   const [isLoading, setisLoading] = useState<boolean>(true);
@@ -70,7 +72,7 @@ const Details = ({
           </div>
         </div>
         <Form addComment={addComment} id={gameInfo.id}/>
-        <Comments comments={gameInfo.comments ? gameInfo.comments : []}/>
+        <Comments id={gameInfo.id} deleteComment={deleteComment} comments={gameInfo.comments ? gameInfo.comments : []}/>
       </div>}
     </div>
   );

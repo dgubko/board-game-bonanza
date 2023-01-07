@@ -65,7 +65,20 @@ function App() {
       return game;
     })
     setTop100(newGames)
-  }  
+  }
+
+  const deleteComment = (commentId: number, id: string) => {
+    const newGames = top100.map(game => {
+      if(game.id === id) {
+        const newComments = game.comments?.filter(comment => {
+         return comment.commentId !== commentId
+        })
+        game.comments = newComments
+      }
+      return game
+    })
+    setTop100(newGames)
+  }
 
   return (
     <div className="App">
@@ -99,6 +112,7 @@ function App() {
               toggleFav={toggleFavorite}
               updateError={updateError}
               addComment={addComment}
+              deleteComment={deleteComment}
             />
           }
         />
