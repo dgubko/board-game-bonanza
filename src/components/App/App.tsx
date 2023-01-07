@@ -13,19 +13,23 @@ import { PageNotFound } from "../PageNotFound/PageNotFound";
 import Error from "../Error/Error";
 const dice = require("../../images/dice.png");
 
+
 function App() {
   const [top100, setTop100] = useState<CleanedGame[]>([]);
   const [bWord, setBWord] = useState<string>("Bonanza");
   const [error, setError] = useState<boolean>(false);
+  const [isLoading, setisLoading] = useState<boolean>(true);
 
   useEffect(() => {
     Promise.resolve(getTop100())
       .then((data) => {
         setTop100(cleanTop100Data(data));
+        setisLoading(false);
       })
       .catch((response) => {
         console.log(response.status);
         setError(true);
+        setisLoading(false);
       });
     setBWord(getRandomWord());
   }, []);
@@ -70,7 +74,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Top100 top100={top100} toggleFav={toggleFavorite} />}
+          element={<Top100 top100={top100} toggleFav={toggleFavorite} isLoading={isLoading} />}
         />
         <Route
           path="/favorites"

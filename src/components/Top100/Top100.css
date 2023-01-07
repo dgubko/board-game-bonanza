@@ -3,3 +3,23 @@
   margin: auto;
   margin-top: 40px;
 }
+
+.is-loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12.5%;
+  color: #174550;
+  font-size: 50px;
+}
+
+.rolling-dice-img {
+  margin-top: 10px;
+  border: 4px solid #174550;
+  border-radius: 8px;
+  height: 500px;
+  width: auto;
+}
+
+
