@@ -33,3 +33,10 @@
   color: #174550;
   font-size: 50px;
 }
+
+.details-and-comment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

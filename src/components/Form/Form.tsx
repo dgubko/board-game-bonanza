@@ -30,8 +30,10 @@ const Form = ({ id, addComment }: {id:string; addComment: (review: Review, id: s
 
   return (
     <div className="form">
+      <h1 className="form-header">Add Your Game Comment Here:</h1>
       {userError && <p>Please enter full review</p>}
       <input
+        className="name-input"
         type='text'
         name='name'
         placeholder='name'
@@ -39,12 +41,15 @@ const Form = ({ id, addComment }: {id:string; addComment: (review: Review, id: s
         onChange={(event) => handleChange(event)}
       />
       <textarea 
+        className="comment-input"
+        rows={8}
+        cols={40}
         name='comment'
         placeholder='Type your comment'
         value={review.comment}
         onChange={(event) => handleChange(event)}
       />
-      <button onClick={() => {submitComment()}}>Submit</button>
+      <button onClick={() => {submitComment()}} className="submit-button">Submit</button>
     </div>
   )
 }

@@ -50,7 +50,7 @@ const Details = ({
   return (
     <div>
       {isLoading && <div className="is-loading-wrapper">Loading...</div>}
-      {!isLoading && <div>
+      {!isLoading && <div className="details-and-comment-container">
         <div className="details-page-container">
           <img src={gameInfo.image}></img>
           <div className="details-description">
