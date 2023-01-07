@@ -1,25 +1,37 @@
-import "./FavGameCard.css";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { BsSuitHeartFill } from 'react-icons/bs'
+import './FavGameCard.css';
+import '../Heart/Heart.css'
+
 
 interface Props {
-  id: string;
-  image: string;
-  name: string;
-  rating: number;
+    id: string;
+    image: string;
+    name: string;
+    rating: number;
+    isFavorited: boolean;
+    toggleFav: (id: string) => void;
 }
 
-const FavGameCard = ({ id, image, name, rating }: Props) => {
-  return (
-    <Link className="fav-game-card" to={"/details/" + id}>
-      <div>
-        <img src={image}></img>
+const FavGameCard = ({ id, image, name, rating, isFavorited, toggleFav }: Props) => {
+
+    return (
         <div>
-          <p>{name}</p>
-          <p>{rating.toFixed(1)}</p>
+            <Link className="fav-game-card" to={'/details/' + id}>
+                <div>
+                    <img src={image}></img>
+                    <div>
+                        <p>{name}</p>
+                        <p>{rating}</p>
+
+                    </div>
+                </div>
+            </Link>
+            <div className='large-font text-center'>
+                <BsSuitHeartFill className={isFavorited ? 'heart active' : 'heart'} onClick={() => toggleFav(id)}/>
+            </div>
         </div>
-      </div>
-    </Link>
-  );
-};
+    )
+}
 
 export default FavGameCard;

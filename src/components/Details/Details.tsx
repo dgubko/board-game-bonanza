@@ -1,27 +1,41 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { GameDetails, CleanDetails } from "../../interfaces";
+import { GameDetails, CleanDetails, CleanedGame } from "../../interfaces";
 import { getDetails } from "../../apiCalls/games";
 import { cleanDetails } from "../../utilities/utilities";
-import { BsSuitHeartFill } from "react-icons/bs";
-import "./Details.css";
+import { BsSuitHeartFill } from "react-icons/bs"
+import './Details.css'
+import '../Heart/Heart.css'
 
-const Details = ({ details }: { details?: GameDetails }) => {
+const Details = ({top100, updateError, toggleFav}: { top100: CleanedGame[], updateError: () => void, toggleFav: (id: string) => void }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
   const { id } = useParams();
 
+  console.log('RIGHT HERE: ', top100[0])
+
   useEffect(() => {
     Promise.resolve(getDetails(id)).then((data) => {
-      console.log("game details", cleanDetails(data));
-      setGameInfo(cleanDetails(data));
-    });
+      setGameInfo(cleanDetails(data, top100));
+    })
+    .catch(response => {
+      console.log(response.status)
+      updateError()
+    })
   }, []);
 
+  useEffect(() => {
+    Promise.resolve(getDetails(id)).then((data) => {
+      setGameInfo(cleanDetails(data, top100));
+    });
+  }, [top100]);
+
+
+
   return (
-    <div>
+    < div >
       <h1></h1>
-      <div className="large-font text-center">
-        <BsSuitHeartFill className="heart" />
+      <div className='large-font text-center'>
+        <BsSuitHeartFill className={gameInfo.isFavorited ? 'heart active' : 'heart'} onClick={() => { toggleFav(gameInfo.id) }} />
       </div>
       <div className="details-page-container">
         <img src={gameInfo.image}></img>
@@ -37,7 +51,7 @@ const Details = ({ details }: { details?: GameDetails }) => {
           <p>Price: ${gameInfo.price}</p>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

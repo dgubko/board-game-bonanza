@@ -12,3 +12,22 @@
   text-decoration: none;
   color: black;
 }
+
+/* .heart-container {
+    z-index: -1;
+    position: relative;
+}
+
+.heart-container:hover {
+    cursor: pointer;
+} */
+
+.heart {
+    width: 50px;
+    z-index: 9999;
+    position: relative;
+}
+
+.heart:hover {
+    cursor: pointer;
+}

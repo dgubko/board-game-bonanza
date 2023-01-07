@@ -1,4 +1,5 @@
-import { Game, GameDetails } from '../interfaces'
+import { Game, GameDetails, CleanedGame } from '../interfaces';
+import top100 from '../components/App/App';
 
 export const cleanTop100Data = (data: {games: Game[]}) => {
     const cleanList = data.games.map((game: Game) => {
@@ -10,14 +11,15 @@ export const cleanTop100Data = (data: {games: Game[]}) => {
             image: game["thumb_url"],
             averageUserRating: game["average_user_rating"],
             numUserRatings: game["num_user_ratings"],
+            isFavorited: false
         }
     })
     return cleanList;
 }
 
-export const cleanDetails = (game: {games: GameDetails[]}) => {
-    console.log(game.games[0])
+export const cleanDetails = (game: {games: GameDetails[]}, top100: CleanedGame[]) => {
     const details = game.games[0]
+    const currentGame: CleanedGame | undefined = top100.find(game => game.id === details.id)
     const cleanDetail = {
         name: details.name,
         rank: details.rank,
@@ -30,6 +32,7 @@ export const cleanDetails = (game: {games: GameDetails[]}) => {
         officialUrl: details["official_url"],
         playtime: details.playtime,
         image: details["image_url"],
+        isFavorited: currentGame ? currentGame.isFavorited : false
     }
     return cleanDetail;
 }
