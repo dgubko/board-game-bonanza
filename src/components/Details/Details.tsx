@@ -6,17 +6,17 @@ import { cleanDetails } from "../../utilities/utilities";
 import { BsSuitHeartFill } from "react-icons/bs";
 import "./Details.css";
 import "../Heart/Heart.css";
-import Form from "../Form/Form";
-import { Review } from "../../interfaces";
-import Comments from "../Comments/Comments";
-const rollingDice = require("../../images/rolling-dice.gif");
+import Form from '../Form/Form'
+import { Review } from '../../interfaces'
+import Comments from '../Comments/Comments'
+const rollingDice = require("../../images/rolling-dice.gif")
 
 const Details = ({
   top100,
   updateError,
   toggleFav,
   addComment,
-  deleteComment,
+  deleteComment
 }: {
   top100: CleanedGame[];
   updateError: () => void;
@@ -32,72 +32,54 @@ const Details = ({
     Promise.resolve(getDetails(id))
       .then((data) => {
         setGameInfo(cleanDetails(data, top100));
-        setisLoading(false);
+        setisLoading(false)
       })
       .catch((response) => {
         console.log(response.status);
         updateError();
-        setisLoading(false);
+        setisLoading(false)
       });
   }, []);
 
   useEffect(() => {
     Promise.resolve(getDetails(id)).then((data) => {
       setGameInfo(cleanDetails(data, top100));
+    })
+    .catch((response) => {
+      console.log(response.status);
+      updateError();
+      setisLoading(false)
     });
   }, [top100]);
 
   return (
     <div>
       {isLoading && <div className="is-loading-wrapper">Loading...</div>}
-      {!isLoading && (
-        <div className="details-and-comment-container">
-          <div className="details-page-container">
-            <img
-              className="details-image"
-              src={gameInfo.image}
-              alt={"Vibrant boardgame cover of " + gameInfo.name}
-            ></img>
-            <div className="details-description">
-              <h2>{gameInfo.name}</h2>
-              <p id="game-rank">Rank: {gameInfo.rank}</p>
-              <p id="game-avg-rating">
-                Avg user rating: {gameInfo.averageUserRating}
-              </p>
-              <p id="game-num-ratings">
-                # of ratings: {gameInfo.numUserRatings}
-              </p>
-              <p id="game-about">About: {gameInfo.description}</p>
-              <p id="game-players">Players: {gameInfo.players}</p>
-              <p id="game-playtime">Playtime: {gameInfo.playtime}</p>
-              <p id="game-official-site">
-                Official site: {gameInfo.officialUrl}
-              </p>
-              <p id="game-price">Price: ${gameInfo.price}</p>
-              <button
-                className="heart-container"
-                onClick={() => {
-                  toggleFav(gameInfo.id);
-                }}
-                aria-label="heart favorite button"
-              >
-                <BsSuitHeartFill
-                  id="detail-heart"
-                  className={gameInfo.isFavorited ? "heart active" : "heart"}
-                />
-              </button>
-            </div>
-          </div>
-          <div className="form-comment-components">
-            <Form addComment={addComment} id={gameInfo.id} />
-            <Comments
-              id={gameInfo.id}
-              deleteComment={deleteComment}
-              comments={gameInfo.comments ? gameInfo.comments : []}
-            />
+      {!isLoading && <div className="details-and-comment-container">
+        <div className="details-page-container">
+          <img src={gameInfo.image} alt={"Vibrant boardgame cover of " + gameInfo.name}></img>
+          <div className="details-description">
+            <h2>{gameInfo.name}</h2>
+            <p>Rank: {gameInfo.rank}</p>
+            <p>Avg user rating: {gameInfo.averageUserRating}</p>
+            <p># of ratings: {gameInfo.numUserRatings}</p>
+            <p>About: {gameInfo.description}</p>
+            <p>Players: {gameInfo.players}</p>
+            <p>Playtime: {gameInfo.playtime}</p>
+            <p>Official site: {gameInfo.officialUrl}</p>
+            <p>Price: ${gameInfo.price}</p>
+            <button className="heart-container" onClick={() => {toggleFav(gameInfo.id)}} aria-label="heart favorite button">
+              <BsSuitHeartFill
+                className={gameInfo.isFavorited ? "heart active" : "heart"}
+              />
+            </button>
           </div>
         </div>
-      )}
+        <div className="form-comment-components">
+          <Form addComment={addComment} id={gameInfo.id} />
+          <Comments id={gameInfo.id} deleteComment={deleteComment} comments={gameInfo.comments ? gameInfo.comments : []} />
+        </div>
+      </div>}
     </div>
   );
 };

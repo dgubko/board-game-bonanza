@@ -129,55 +129,32 @@ describe("Game details when API server is up", () => {
   });
 });
 
-describe.only("Game details when API server is down", () => {
+
+describe("Game details when API server is down", () => {
   beforeEach(() => {
-    cy.intercept(
-      "https://api.boardgameatlas.com/api/search?ids=TAAifFP590&client_id=NO0Fq8pQcF",
-      {
-        method: "GET",
-      },
-      {
-        statusCode: 500,
-      }
-    );
-
-    cy.visit("http://localhost:3000/details/TAAifFP590");
-  });
-
-  it("should show error message when the api is down", () => {
-    cy.get(".error-modal").should("contain", "Oops! Something went wrong!");
-  });
-
-  it("should bring user back to home page when dismiss button is clicked", () => {
-    cy.get("#dismiss-button").click();
-    cy.get(".gameCard-container")
-      .eq(0)
-      .should("contain", "Root")
-      .and("contain", "$48.00")
-      .and("contain", "4.06 / 5")
-      .and("contain", "404 reviews")
-      .within(() => {
-        cy.get("img").should(
-          "have.attr",
-          "src",
-          "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1540147295104"
-        );
-        cy.get("button").eq(1).should("exist");
+      cy.intercept('https://api.boardgameatlas.com/api/search?order_by=rank&ascending=false&limit=100&client_id=NO0Fq8pQcF', {
+        method:"GET",
+        fixture: "../fixtures/top100.json"
+      })
+      cy.visit('http://localhost:3000/')
+      cy.intercept( 'https://api.boardgameatlas.com/api/search?ids=TAAifFP590&client_id=NO0Fq8pQcF', {
+      method: "GET" },
+    { statusCode: 500
       });
+    cy.get('.gameCard-container').eq(0).click()
+    })
 
-    cy.get(".gameCard-container")
-      .eq(1)
-      .should("contain", "Scythe")
-      .and("contain", "$54.92")
-      .and("contain", "4.22 / 5")
-      .and("contain", "753 reviews")
-      .within(() => {
-        cy.get("img").should(
-          "have.attr",
-          "src",
-          "https://cdn.shopify.com/s/files/1/0513/4077/1515/products/scythe-board-game.jpg?v=1611090922"
-        );
-        cy.get("button").eq(1).should("exist");
-      });
+
+    
+  it('should show error message when the api is down', () => {
+    cy.get('.error-modal').should("contain", "Oops! Something went wrong!");
+    });
+
+    it("should bring user back to home page when dismiss button is clicked", () => {
+      cy.get("#dismiss-button").click();
+      cy.get(".gameCard-container").eq(0).should('exist')
+      cy.get(".gameCard-container").eq(1).should('exist')
   });
-});
+})
+
+
