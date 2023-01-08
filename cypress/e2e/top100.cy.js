@@ -18,6 +18,7 @@ describe('Top 100', () => {
   })
 
   it('displays all top100 games', () => {
+    cy.get('#search-input').should('exist')
     cy.get('.gameCard-container').should('have.length', 2)
     cy.get('.gameCard-container').eq(0).should('contain', "Root")
       .and('contain', '$48.00')

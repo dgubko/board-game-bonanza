@@ -1,7 +1,7 @@
 import "./App.css";
 import "../Heart/Heart.css";
 import { useEffect, useState } from "react";
-import { Route, NavLink, Routes } from "react-router-dom";
+import { Route, NavLink, Routes, useLocation } from "react-router-dom";
 import { getTop100 } from "../../apiCalls/games";
 import { cleanTop100Data } from "../../utilities/utilities";
 import { CleanedGame } from "../../interfaces";
@@ -79,9 +79,12 @@ function App() {
     });
     setTop100(newGames);
   };
+
   const filtered = top100.filter((game) => {
     return game.name.toLowerCase().includes(query.toLowerCase());
   });
+
+  const { pathname } = useLocation();
 
   return (
     <div className="App">
@@ -89,7 +92,7 @@ function App() {
       <header>
         <img src={dice} alt="Icon of 6-sided die with dark blue or pink pips"/>
         <h1 id="title">Boardgame {bWord}</h1>
-        <Search query={query} setQuery={setQuery} />
+        {pathname === '/' ? <Search query={query} setQuery={setQuery} /> : <div className='input-form' style={{border: 'none'}}></div>}
       </header>
       <nav>
         <NavLink className="button" id='top100-button' to="/">
