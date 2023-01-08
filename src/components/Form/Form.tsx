@@ -39,6 +39,7 @@ const Form = ({ id, addComment }: {id:string; addComment: (review: Review, id: s
         placeholder='name'
         value={review.name}
         onChange={(event) => handleChange(event)}
+        aria-label="text field to enter your name"
       />
       <textarea 
         className="comment-input"
@@ -48,6 +49,7 @@ const Form = ({ id, addComment }: {id:string; addComment: (review: Review, id: s
         placeholder='Type your comment'
         value={review.comment}
         onChange={(event) => handleChange(event)}
+        aria-label="text field to enter your comment or review"
       />
       <button onClick={() => {submitComment()}} className="submit-button">Submit</button>
     </div>

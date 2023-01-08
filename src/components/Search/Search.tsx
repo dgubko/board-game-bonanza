@@ -20,6 +20,7 @@ export const Search = (props: Props) => {
         value={props.query}
         placeholder="Search by name"
         onChange={handleInputChange}
+        aria-label="search field to find board game title"
       />
     </form>
   );
