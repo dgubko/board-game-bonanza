@@ -9,12 +9,15 @@ describe('Top 100', () => {
     cy.visit('http://localhost:3000/')
   })
 
-  it('displays a title', () => {
+  it('displays a title, header, and nav bar', () => {
     cy.get("#title").contains('Boardgame')
     cy.get('#title').invoke('text').then((text) => {
       const word = text.split(' ')
       assert.isTrue(words.includes(word[1]))
     })
+    cy.get('#top100-button').should('have.css', 'background-color', 'rgb(171, 176, 177)')
+    cy.get('#fav-button').should('have.css', 'background-color', 'rgb(0, 221, 255)')
+    cy.get('#search-input').should('exist')
   })
 
   it('displays all top100 games', () => {

@@ -21,6 +21,7 @@ function App() {
   const [error, setError] = useState<boolean>(false);
   const [isLoading, setisLoading] = useState<boolean>(true);
   const [query, setQuery] = useState("");
+  const [clicked, setClicked] = useState('top100')
 
   useEffect(() => {
     Promise.resolve(getTop100())
@@ -95,10 +96,10 @@ function App() {
         {pathname === '/' ? <Search query={query} setQuery={setQuery} /> : <div className='input-form' style={{border: 'none'}}></div>}
       </header>
       <nav>
-        <NavLink className="button" id='top100-button' to="/">
+        <NavLink className={clicked === 'top100' ? 'button selected' : 'button'} id='top100-button' to="/" onClick={() => setClicked('top100')}>
           Top 100
         </NavLink>
-        <NavLink className="button" id='fav-button' to="/favorites">
+        <NavLink className={clicked === 'favorites' ? 'button selected' : 'button'} id='fav-button' to="/favorites" onClick={() => setClicked('favorites')}>
           Favorites
         </NavLink>
       </nav>

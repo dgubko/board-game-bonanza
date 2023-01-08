@@ -1,3 +1,5 @@
+import { words } from '../../src/utilities/utilities'
+
 describe('Top 100', () => {
     beforeEach(() => {
     cy.intercept('https://api.boardgameatlas.com/api/search?order_by=rank&ascending=false&limit=100&client_id=NO0Fq8pQcF', {
@@ -9,6 +11,17 @@ describe('Top 100', () => {
       cy.get('.heart-container').eq(1).click()
       cy.get('#fav-button').click()
     })
+
+    it('displays a title, header, and nav bar', () => {
+        cy.get("#title").contains('Boardgame')
+        cy.get('#title').invoke('text').then((text) => {
+          const word = text.split(' ')
+          assert.isTrue(words.includes(word[1]))
+        })
+        cy.get('#fav-button').should('have.css', 'background-color', 'rgb(171, 176, 177)')
+        cy.get('#top100-button').should('have.css', 'background-color', 'rgb(0, 221, 255)')
+        cy.get('#search-input').should('not.exist')
+    })    
 
     it('should display favorited games', () => {
         cy.get('.fav-game-card-wrapper').eq(0).should('contain', 'Root')
