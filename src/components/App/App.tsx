@@ -92,10 +92,10 @@ function App() {
         <Search query={query} setQuery={setQuery} />
       </header>
       <nav>
-        <NavLink className="button" to="/">
+        <NavLink className="button" id='top100-button' to="/">
           Top 100
         </NavLink>
-        <NavLink className="button" to="/favorites">
+        <NavLink className="button" id='fav-button' to="/favorites">
           Favorites
         </NavLink>
       </nav>
