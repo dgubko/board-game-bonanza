@@ -18,7 +18,7 @@
 }
 
 .fav-game-card-wrapper .heart-container {
-  bottom: 16px;
-  right: 16px;
+  bottom: 5px;
+  right: 5px;
   position: absolute;
 }
