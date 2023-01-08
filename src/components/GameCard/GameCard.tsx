@@ -25,7 +25,7 @@ const GameCard = ({
           <p>Rank: #{rank}</p>
         </div>
         <img src={image} alt={"Vibrant boardgame cover of " + name} />
-        <h3>{name}</h3>
+        <h2>{name}</h2>
         <p>${price}</p>
         <p>{averageUserRating.toFixed(2)} / 5 ⭐️</p>
         <p>{numUserRatings} reviews</p>
