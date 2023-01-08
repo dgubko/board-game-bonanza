@@ -143,6 +143,12 @@ describe('Top 100', () => {
     cy.get('.gameCard-container').eq(1).should('not.exist')
   })
 
+  it('Should see a message when there are no search results', () => {
+    cy.get('#search-input').type('xx')
+    cy.get('.gameCard-container').should('not.exist')
+    cy.get('.search-no-games').should('contain', 'Sorry, there were no games that matched your search. Please try a different search.')
+  })
+
   it('Should show an error message when a user uses an incorrect url', () => {
     cy.visit('http://localhost:3000/bananas')
     cy.get('.page404').should('contain', '404')
