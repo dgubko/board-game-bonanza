@@ -25,10 +25,11 @@
   margin-right: 30px;
 }
 
-.gameCard-container > svg {
+.gameCard-container > .heart-container {
   position: absolute;
-  right: 24px;
-
+  right: 5px;
+  border-style: none;
+  width: min-content;
 }
 
 .rank-number {

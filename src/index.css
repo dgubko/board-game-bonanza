@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+a:focus, button:focus, input:focus, textarea:focus, .heart-container:focus{
+  outline-width: 5px;
+  outline-style: solid;
+  outline-color: #f17b89;
+}
+
+.heart-container{
+  border-style: none;
+  background-color: #f7f5fa;
+}

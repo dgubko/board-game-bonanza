@@ -5,7 +5,7 @@ const CommentCard = ({commentId, comment, name, gameId, deleteComment }: {commen
   return (
     <div className="comment-container">
       <p>{name} said: "{comment}"</p>
-      <p onClick={() => deleteComment(commentId, gameId)}>{<CgTrash className="delete"/>}</p>
+      <p onClick={() => deleteComment(commentId, gameId)}>{<button className="trash-can" aria-label="trash delete button"><CgTrash className="delete"/></button>}</p>
     </div>
   )
 }

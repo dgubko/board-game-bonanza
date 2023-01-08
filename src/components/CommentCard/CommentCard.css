@@ -21,3 +21,8 @@
     cursor: pointer;
 }
 
+.trash-can{
+    border-style: none;
+    background-color: #f7f5fa;
+}
+

@@ -37,7 +37,6 @@ function App() {
   }, []);
 
   const toggleFavorite = (id: string) => {
-    console.log("toggle is here!");
     const newGames = top100.map((game) => {
       if (game.id === id) {
         return {
@@ -88,7 +87,7 @@ function App() {
     <div className="App">
       {error && <Error closeError={closeError} />}
       <header>
-        <img src={dice} />
+        <img src={dice} alt="Icon of 6-sided die with dark blue or pink pips"/>
         <h1>Boardgame {bWord}</h1>
         <Search query={query} setQuery={setQuery} />
       </header>

@@ -52,7 +52,7 @@ const Details = ({
       {isLoading && <div className="is-loading-wrapper">Loading...</div>}
       {!isLoading && <div className="details-and-comment-container">
         <div className="details-page-container">
-          <img src={gameInfo.image}></img>
+          <img src={gameInfo.image} alt={"Vibrant boardgame cover of " + gameInfo.name}></img>
           <div className="details-description">
             <h2>{gameInfo.name}</h2>
             <p>Rank: {gameInfo.rank}</p>
@@ -63,17 +63,16 @@ const Details = ({
             <p>Playtime: {gameInfo.playtime}</p>
             <p>Official site: {gameInfo.officialUrl}</p>
             <p>Price: ${gameInfo.price}</p>
-            <BsSuitHeartFill
-              className={gameInfo.isFavorited ? "heart active" : "heart"}
-              onClick={() => {
-                toggleFav(gameInfo.id);
-              }}
-            />
+            <button className="heart-container" onClick={() => {toggleFav(gameInfo.id)}} aria-label="heart favorite button">
+              <BsSuitHeartFill
+                className={gameInfo.isFavorited ? "heart active" : "heart"}
+              />
+            </button>
           </div>
         </div>
         <div className="form-comment-components">
-          <Form addComment={addComment} id={gameInfo.id}/>
-          <Comments id={gameInfo.id} deleteComment={deleteComment} comments={gameInfo.comments ? gameInfo.comments : []}/>
+          <Form addComment={addComment} id={gameInfo.id} />
+          <Comments id={gameInfo.id} deleteComment={deleteComment} comments={gameInfo.comments ? gameInfo.comments : []} />
         </div>
       </div>}
     </div>

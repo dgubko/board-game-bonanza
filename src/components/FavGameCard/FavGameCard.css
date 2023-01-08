@@ -17,8 +17,8 @@
   color: black;
 }
 
-.fav-game-card-wrapper .heart {
-  bottom: 16px;
-  right: 16px;
+.fav-game-card-wrapper .heart-container {
+  bottom: 5px;
+  right: 5px;
   position: absolute;
 }
