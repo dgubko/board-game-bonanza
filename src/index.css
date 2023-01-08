@@ -20,5 +20,5 @@ a:focus, button:focus, input:focus, textarea:focus, .heart-container:focus{
 
 .heart-container{
   border-style: none;
-  background-color: white;
+  background-color: #f7f5fa;
 }
