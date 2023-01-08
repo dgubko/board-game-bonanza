@@ -63,17 +63,18 @@ const Details = ({
             <p>Playtime: {gameInfo.playtime}</p>
             <p>Official site: {gameInfo.officialUrl}</p>
             <p>Price: ${gameInfo.price}</p>
-            <BsSuitHeartFill
-              className={gameInfo.isFavorited ? "heart active" : "heart"}
-              onClick={() => {
-                toggleFav(gameInfo.id);
-              }}
-            />
+            <button className="heart-container" onClick={() => {
+                  toggleFav(gameInfo.id);
+                }}>
+              <BsSuitHeartFill
+                className={gameInfo.isFavorited ? "heart active" : "heart"}
+              />
+            </button>
           </div>
         </div>
         <div className="form-comment-components">
-          <Form addComment={addComment} id={gameInfo.id}/>
-          <Comments id={gameInfo.id} deleteComment={deleteComment} comments={gameInfo.comments ? gameInfo.comments : []}/>
+          <Form addComment={addComment} id={gameInfo.id} />
+          <Comments id={gameInfo.id} deleteComment={deleteComment} comments={gameInfo.comments ? gameInfo.comments : []} />
         </div>
       </div>}
     </div>

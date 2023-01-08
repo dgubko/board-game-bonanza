@@ -31,10 +31,11 @@ const GameCard = ({
         <p>{numUserRatings} reviews</p>
       </button>
       {toggleFav && (
-        <BsSuitHeartFill
-          className={isFavorited ? "heart active" : "heart"}
-          onClick={() => toggleFav(id)}
-        />
+        <button className="heart-container" onClick={() => toggleFav(id)}>
+          <BsSuitHeartFill
+            className={isFavorited ? "heart active" : "heart"}
+          />
+        </button>
       )}
     </div>
   );
