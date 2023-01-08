@@ -19,7 +19,7 @@ const Top100 = ({
   return (
     <div>
       {isLoading && <div className="is-loading-wrapper">Loading...<img src={rollingDice} className="rolling-dice-img" alt="animation of 6-sided die rolling into a dice pip"/></div>}
-      <div className="all-card-container">{gameList}</div>;
+      <div className="all-card-container">{gameList}</div>
     </div>
   )
 };
