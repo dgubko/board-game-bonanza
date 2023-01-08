@@ -38,7 +38,7 @@ describe('Top 100', () => {
       })
   })
 
-  it('favorites a game and changes color when heart is clicked', () => {
+  it('toggle favorites when heart is clicked', () => {
     cy.get('.heart-container').eq(0)
     .within(() => {
       cy.get('.heart').should('exist')
@@ -53,6 +53,16 @@ describe('Top 100', () => {
 
     cy.get('#fav-button').click()
     cy.get('.fav-game-card-wrapper').contains('Root')
+
+    cy.get('#top100-button').click()
+    cy.get('.heart-container').eq(0).click()
+      .within(() => {
+        cy.get('.heart').should('exist')
+        .and('have.css', 'fill', 'rgb(137, 137, 137)')
+      })
+    
+    cy.get('#fav-button').click()
+    cy.get('.fav-game-card-wrapper').should('not.exist')
   })
 
   it('Should display top100 when top100 button is clicked from favorites', () => {
