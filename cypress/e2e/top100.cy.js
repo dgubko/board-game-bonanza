@@ -134,7 +134,7 @@ describe('Top 100', () => {
   })
 
   it('Should be able to search for a specific game', () => {
-    cy.get('#search-input').type('Roo')
+    cy.get('#search-input').type('Roo').should('have.value', 'Roo')
     cy.get('.gameCard-container').eq(0).should('contain', "Root")
     .and('contain', '$48.00')
     .and('contain', '4.06 / 5')
@@ -147,7 +147,7 @@ describe('Top 100', () => {
   })
 
   it('Should see a message when there are no search results', () => {
-    cy.get('#search-input').type('xx')
+    cy.get('#search-input').type('xx').should('have.value', 'xx')
     cy.get('.gameCard-container').should('not.exist')
     cy.get('.search-no-games').should('contain', 'Sorry, there were no games that matched your search. Please try a different search.')
   })
