@@ -45,7 +45,7 @@ export const getRandomWord = () => {
 }
 
 
-const words = [
+export const words = [
     'Badass',
     'Backbone',
     'Balance',

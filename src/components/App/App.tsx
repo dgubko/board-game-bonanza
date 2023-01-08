@@ -88,7 +88,7 @@ function App() {
       {error && <Error closeError={closeError} />}
       <header>
         <img src={dice} alt="Icon of 6-sided die with dark blue or pink pips"/>
-        <h1>Boardgame {bWord}</h1>
+        <h1 id="title">Boardgame {bWord}</h1>
         <Search query={query} setQuery={setQuery} />
       </header>
       <nav>
