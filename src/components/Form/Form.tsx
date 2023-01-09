@@ -49,7 +49,7 @@ const Form = ({
         name="name"
         placeholder="name"
         value={review.name}
-        onChange={(event) => handleChange(event)}
+        onChange={handleChange}
         aria-label="text field to enter your name"
       />
       <textarea
@@ -59,7 +59,7 @@ const Form = ({
         name="comment"
         placeholder="Type your comment"
         value={review.comment}
-        onChange={(event) => handleChange(event)}
+        onChange={handleChange}
         aria-label="text field to enter your comment or review"
       />
       <button
