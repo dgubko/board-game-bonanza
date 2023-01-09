@@ -15,10 +15,12 @@
   border-radius: 8px;
   text-decoration: none;
   color: black;
+  min-width: 150px;
 }
 
 .fav-game-card-wrapper .heart-container {
   bottom: 5px;
   right: 5px;
   position: absolute;
+  background-color: white;
 }
