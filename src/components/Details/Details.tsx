@@ -66,7 +66,7 @@ const Details = ({
             <p id="about">About: {gameInfo.description}</p>
             <p>Players: {gameInfo.players}</p>
             <p>Playtime: {gameInfo.playtime}</p>
-            <p>Official site: {gameInfo.officialUrl}</p>
+            <p>Official site: <a href={gameInfo.officialUrl}>{gameInfo.officialUrl}</a></p>
             <p>Price: ${gameInfo.price}</p>
             <button className="heart-container" onClick={() => {toggleFav(gameInfo.id)}} aria-label="heart favorite button">
               <BsSuitHeartFill

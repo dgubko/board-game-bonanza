@@ -157,10 +157,7 @@ describe('Top 100', () => {
       })
 
   })
-
-
   })
-
 
   describe('Server-side error', () => {
     beforeEach(() => {
@@ -170,8 +167,16 @@ describe('Top 100', () => {
         })
         cy.visit('http://localhost:3000/')
     })
+
     it('Should show response when there is a server error', () => {
       cy.get('.error-modal').should('contain', 'Oops! Something went wrong!')
       .and('contain', 'Please try again later')
     })
+
+    it('Should close the modal when the dismiss button is clicked', () => {
+      cy.get('#dismiss-button').click()
+      cy.get('.gameCard-container').should('not.exist')
+      cy.get('.error-modal').should('not.exist')
+    })
+
   })

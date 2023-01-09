@@ -9,11 +9,7 @@ const Error = ({ closeError }: { closeError: () => void }) => {
         <img src={errorIcon} className="error-icon" />
         <h2>Oops! Something went wrong!</h2>
         <p>Please try again later</p>
-        <Link to="/">
-          <button id="dismiss-button" onClick={() => closeError()}>
-            Dismiss
-          </button>
-        </Link>
+        <Link to='/'><button onClick={() => closeError()} id="dismiss-button">Dismiss</button></Link>
       </div>
     </div>
   );
