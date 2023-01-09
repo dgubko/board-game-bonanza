@@ -20,11 +20,11 @@ function App() {
   const [bWord, setBWord] = useState<string>("Bonanza");
   const [error, setError] = useState<boolean>(false);
   const [isLoading, setisLoading] = useState<boolean>(true);
-  const [query, setQuery] = useState("");
-  const [clicked, setClicked] = useState('top100')
+  const [query, setQuery] = useState<string>("");
+  const [clicked, setClicked] = useState<string>("top100");
 
   useEffect(() => {
-    Promise.resolve(getTop100())
+    getTop100()
       .then((data) => {
         setTop100(cleanTop100Data(data));
         setisLoading(false);
@@ -88,22 +88,36 @@ function App() {
   const { pathname } = useLocation();
 
   const clearClicked = () => {
-    setClicked('')
-  }
+    setClicked("");
+  };
 
   return (
     <div className="App">
       {error && <Error closeError={closeError} />}
       <header>
-        <img src={dice} alt="Icon of 6-sided die with dark blue or pink pips"/>
+        <img src={dice} alt="Icon of 6-sided die with dark blue or pink pips" />
         <h1 id="title">Boardgame {bWord}</h1>
-        {pathname === '/' ? <Search query={query} setQuery={setQuery} /> : <div className='input-form' style={{border: 'none'}}></div>}
+        {pathname === "/" ? (
+          <Search query={query} setQuery={setQuery} />
+        ) : (
+          <div className="input-form" style={{ border: "none" }}></div>
+        )}
       </header>
       <nav>
-        <NavLink className={clicked === 'top100' ? 'button selected' : 'button'} id='top100-button' to="/" onClick={() => setClicked('top100')}>
+        <NavLink
+          className={clicked === "top100" ? "button selected" : "button"}
+          id="top100-button"
+          to="/"
+          onClick={() => setClicked("top100")}
+        >
           Top 100
         </NavLink>
-        <NavLink className={clicked === 'favorites' ? 'button selected' : 'button'} id='fav-button' to="/favorites" onClick={() => setClicked('favorites')}>
+        <NavLink
+          className={clicked === "favorites" ? "button selected" : "button"}
+          id="fav-button"
+          to="/favorites"
+          onClick={() => setClicked("favorites")}
+        >
           Favorites
         </NavLink>
       </nav>
