@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: #174550;
+  padding-top: 5%;
+  font-size: 24px;
 }
 
 .page404 > p {

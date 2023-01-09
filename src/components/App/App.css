@@ -2,6 +2,7 @@
   background-color: #57bf93;
   padding: 32px;
   min-height: 100vh;
+  font-family: "Signika Negative", sans-serif;
 }
 
 header {
@@ -12,6 +13,12 @@ header {
   border-radius: 8px;
   margin-bottom: 16px;
   justify-content: space-between;
+  font-family: "Permanent Marker", cursive;
+  font-size: 24px;
+}
+
+html {
+  font-family: "Signika Negative", sans-serif;
 }
 
 header > img {
@@ -35,4 +42,3 @@ header > img {
   background-color: rgb(171, 176, 177);
   cursor: default;
 }
-

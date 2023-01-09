@@ -1,13 +1,12 @@
 import "../Top100/Top100.css";
 import { CleanedGame } from "../../interfaces";
 import GameCard from "../GameCard/GameCard";
-import { Link } from "react-router-dom";
-const rollingDice = require("../../images/rolling-dice.gif")
+const rollingDice = require("../../images/rolling-dice.gif");
 
 const Top100 = ({
   top100,
   toggleFav,
-  isLoading
+  isLoading,
 }: {
   top100: CleanedGame[];
   toggleFav: (id: string) => void;
@@ -19,20 +18,34 @@ const Top100 = ({
 
   const displayMessage = () => {
     if (!gameList.length && !isLoading) {
-        return <div className="search-no-games">Sorry, there were no games that matched your search. Please try a different search.</div>;
+      return (
+        <div className="search-no-games">
+          Sorry, there were no games that matched your search. Please try a
+          different search.
+        </div>
+      );
     } else if (gameList.length && !isLoading) {
-        return <div className="all-card-container">{gameList}</div>;
+      return <div className="all-card-container">{gameList}</div>;
     } else {
-        return null
+      return null;
     }
-  }
+  };
 
   return (
     <div>
-      {isLoading && <div className="is-loading-wrapper">Loading...<img src={rollingDice} className="rolling-dice-img" alt="animation of 6-sided die rolling into a dice pip"/></div>}
+      {isLoading && (
+        <div className="is-loading-wrapper">
+          Loading...
+          <img
+            src={rollingDice}
+            className="rolling-dice-img"
+            alt="animation of 6-sided die rolling into a dice pip"
+          />
+        </div>
+      )}
       {displayMessage()}
     </div>
-  )
+  );
 };
 
 export default Top100;

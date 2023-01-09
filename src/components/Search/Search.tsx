@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./Search.css";
 
 type Props = {
@@ -13,6 +14,12 @@ export const Search = (props: Props) => {
   const handleSubmit = (event: any) => {
     event.preventDefault();
   };
+
+  useEffect(() => {
+    return () => {
+      props.setQuery("");
+    };
+  }, []);
 
   return (
     <form className="input-form" onSubmit={handleSubmit}>
