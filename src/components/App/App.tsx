@@ -87,6 +87,10 @@ function App() {
 
   const { pathname } = useLocation();
 
+  const clearClicked = () => {
+    setClicked('')
+  }
+
   return (
     <div className="App">
       {error && <Error closeError={closeError} />}
@@ -127,6 +131,7 @@ function App() {
               updateError={updateError}
               addComment={addComment}
               deleteComment={deleteComment}
+              clearClicked={clearClicked}
             />
           }
         />
