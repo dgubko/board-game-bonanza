@@ -15,7 +15,9 @@ const Comments = ({
     return (
       <CommentCard
         key={comment.commentId}
-        {...comment}
+        commentId={comment.commentId}
+        comment={comment.comment}
+        name={comment.name}
         gameId={id}
         deleteComment={deleteComment}
       />

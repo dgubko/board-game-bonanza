@@ -96,7 +96,7 @@ function App() {
       {error && <Error closeError={closeError} />}
       <header>
         <img src={dice} alt="Icon of 6-sided die with dark blue or pink pips" />
-        <h1 id="title">Boardgame {bWord}</h1>
+        <h1 id="title">Board Game {bWord}</h1>
         {pathname === "/" ? (
           <Search query={query} setQuery={setQuery} />
         ) : (

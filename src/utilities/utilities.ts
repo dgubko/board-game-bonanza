@@ -1,6 +1,4 @@
 import { Game, GameDetails, CleanedGame } from '../interfaces';
-import top100 from '../components/App/App';
-import { Review } from '../interfaces'
 
 export const cleanTop100Data = (data: {games: Game[]}) => {
     const cleanList = data.games.map((game: Game) => {

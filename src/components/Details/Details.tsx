@@ -1,15 +1,14 @@
 import "./Details.css";
 import "../Heart/Heart.css";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { GameDetails, CleanDetails, CleanedGame } from "../../interfaces";
+import { CleanDetails, CleanedGame } from "../../interfaces";
 import { getDetails } from "../../apiCalls/games";
 import { cleanDetails } from "../../utilities/utilities";
 import { BsSuitHeartFill } from "react-icons/bs";
 import Form from "../Form/Form";
 import { Review } from "../../interfaces";
 import Comments from "../Comments/Comments";
-const rollingDice = require("../../images/rolling-dice.gif");
 
 const Details = ({
   top100,
