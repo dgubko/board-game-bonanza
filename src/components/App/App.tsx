@@ -1,7 +1,7 @@
 import "./App.css";
 import "../Heart/Heart.css";
 import { useEffect, useState } from "react";
-import { Route, NavLink, Routes } from "react-router-dom";
+import { Route, NavLink, Routes, useLocation } from "react-router-dom";
 import { getTop100 } from "../../apiCalls/games";
 import { cleanTop100Data } from "../../utilities/utilities";
 import { CleanedGame } from "../../interfaces";
@@ -21,6 +21,7 @@ function App() {
   const [error, setError] = useState<boolean>(false);
   const [isLoading, setisLoading] = useState<boolean>(true);
   const [query, setQuery] = useState("");
+  const [clicked, setClicked] = useState('top100')
 
   useEffect(() => {
     Promise.resolve(getTop100())
@@ -79,23 +80,26 @@ function App() {
     });
     setTop100(newGames);
   };
+
   const filtered = top100.filter((game) => {
     return game.name.toLowerCase().includes(query.toLowerCase());
   });
+
+  const { pathname } = useLocation();
 
   return (
     <div className="App">
       {error && <Error closeError={closeError} />}
       <header>
         <img src={dice} alt="Icon of 6-sided die with dark blue or pink pips"/>
-        <h1>Boardgame {bWord}</h1>
-        <Search query={query} setQuery={setQuery} />
+        <h1 id="title">Boardgame {bWord}</h1>
+        {pathname === '/' ? <Search query={query} setQuery={setQuery} /> : <div className='input-form' style={{border: 'none'}}></div>}
       </header>
       <nav>
-        <NavLink className="button" to="/">
+        <NavLink className={clicked === 'top100' ? 'button selected' : 'button'} id='top100-button' to="/" onClick={() => setClicked('top100')}>
           Top 100
         </NavLink>
-        <NavLink className="button" to="/favorites">
+        <NavLink className={clicked === 'favorites' ? 'button selected' : 'button'} id='fav-button' to="/favorites" onClick={() => setClicked('favorites')}>
           Favorites
         </NavLink>
       </nav>

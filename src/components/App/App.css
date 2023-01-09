@@ -30,3 +30,9 @@ header > img {
   cursor: pointer;
   margin-right: 12px;
 }
+
+.selected {
+  background-color: rgb(171, 176, 177);
+  cursor: default;
+}
+

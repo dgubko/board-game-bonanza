@@ -16,10 +16,21 @@ const Top100 = ({
   const gameList = top100.map((game) => {
     return <GameCard key={game.id} toggleFav={toggleFav} {...game} />;
   });
+
+  const displayMessage = () => {
+    if (!gameList.length && !isLoading) {
+        return <div className="search-no-games">Sorry, there were no games that matched your search. Please try a different search.</div>;
+    } else if (gameList.length && !isLoading) {
+        return <div className="all-card-container">{gameList}</div>;
+    } else {
+        return null
+    }
+  }
+
   return (
     <div>
       {isLoading && <div className="is-loading-wrapper">Loading...<img src={rollingDice} className="rolling-dice-img" alt="animation of 6-sided die rolling into a dice pip"/></div>}
-      <div className="all-card-container">{gameList}</div>;
+      {displayMessage()}
     </div>
   )
 };

@@ -1,0 +1,367 @@
+{
+    "games": [
+      {
+        "id": "TAAifFP590",
+        "handle": "root",
+        "url": "https://www.boardgameatlas.com/game/TAAifFP590/root",
+        "bga_edit_url": "https://www.boardgameatlas.com/game/TAAifFP590/edit",
+        "template_url": "/products/listing?objectId=TAAifFP590&product_line=Board Games&type=product",
+        "name": "Root",
+        "price": "48.00",
+        "price_ca": "59.95",
+        "price_uk": "54.95",
+        "price_au": "73.45",
+        "msrp": 60,
+        "msrps": [
+          {
+            "country": "US",
+            "price": 60
+          },
+          {
+            "country": "CA",
+            "price": 81.6
+          },
+          {
+            "country": "UK",
+            "price": 0
+          },
+          {
+            "country": "AU",
+            "price": 0
+          }
+        ],
+        "discount": "0.20",
+        "year_published": 2018,
+        "min_players": 2,
+        "max_players": 4,
+        "player_counts": [
+          2,
+          3,
+          4
+        ],
+        "min_playtime": 60,
+        "max_playtime": 90,
+        "min_age": 10,
+        "description": "<p>Find adventure in this marvelous asymmetric game. Root provides limitless replay value as you and your friends explore the unique factions all wanting to rule a fantastic forest kingdom. Play as the Marquise de Cat and dominate the woods, extracting its riches and policing its inhabitants, as the Woodland Alliance, gathering supporters and coordinate revolts against the ruling regime, the Eyrie Dynasties, regaining control of the woods while keeping your squabbling court at bay, or as the Vagabond, seeking fame and fortune as you forge alliances and rivalries with the other players. Each faction has its own play style and paths to victory, providing an immersive game experience you will want to play again and again.</p>",
+        "commentary": "<p>During a car ride, designer Cole and his wife were listening to an audio book of T. H. White's <strong>The Once and Future King</strong>. When the Monarch of Moat delivered the following line to Arthur, it spawned a series of ideas creating the framework for Root, a game of Might and Right: &quot;...There is only power. Power is of the individual mind, but the mind's power is not enough. Power of the body decides everything in the end, and only Might is Right.&quot;</p>",
+        "thumb_url": "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1540147295104",
+        "image_url": "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1540147295104",
+        "matches_specs": null,
+        "specs": [],
+        "mechanics": [
+          {
+            "id": "PGjmKGi26h",
+            "url": "https://www.boardgameatlas.com/mechanic/PGjmKGi26h/undefined"
+          },
+          {
+            "id": "ckCp1oTVMy",
+            "url": "https://www.boardgameatlas.com/mechanic/ckCp1oTVMy/undefined"
+          },
+          {
+            "id": "05zCZoLvQJ",
+            "url": "https://www.boardgameatlas.com/mechanic/05zCZoLvQJ/undefined"
+          },
+          {
+            "id": "R0bGq4cAl4",
+            "url": "https://www.boardgameatlas.com/mechanic/R0bGq4cAl4/undefined"
+          },
+          {
+            "id": "yu3eas6v7A",
+            "url": "https://www.boardgameatlas.com/mechanic/yu3eas6v7A/undefined"
+          },
+          {
+            "id": "WPytek5P8l",
+            "url": "https://www.boardgameatlas.com/mechanic/WPytek5P8l/undefined"
+          },
+          {
+            "id": "MEAoOygZsA",
+            "url": "https://www.boardgameatlas.com/mechanic/MEAoOygZsA/undefined"
+          },
+          {
+            "id": "qZx4PEzKKz",
+            "url": "https://www.boardgameatlas.com/mechanic/qZx4PEzKKz/undefined"
+          },
+          {
+            "id": "XM2FYZmBHH",
+            "url": "https://www.boardgameatlas.com/mechanic/XM2FYZmBHH/undefined"
+          }
+        ],
+        "categories": [
+          {
+            "id": "KUBCKBkGxV",
+            "url": "https://www.boardgameatlas.com/category/KUBCKBkGxV/undefined"
+          },
+          {
+            "id": "MWoxgHrOJD",
+            "url": "https://www.boardgameatlas.com/category/MWoxgHrOJD/undefined"
+          },
+          {
+            "id": "Bq6M0TJyg7",
+            "url": "https://www.boardgameatlas.com/category/Bq6M0TJyg7/undefined"
+          }
+        ],
+        "publishers": [
+          {
+            "id": "jyc9bV7f9D",
+            "num_games": null,
+            "score": 9999999,
+            "game": {},
+            "url": "https://www.boardgameatlas.com/publisher/jyc9bV7f9D/undefined",
+            "images": {
+              "thumb": null,
+              "small": null,
+              "medium": null,
+              "large": null,
+              "original": null
+            }
+          }
+        ],
+        "designers": [
+          {
+            "id": "DJCmDFXmsh",
+            "num_games": null,
+            "score": 9999999,
+            "game": {},
+            "url": "https://www.boardgameatlas.com/designer/DJCmDFXmsh/undefined",
+            "images": {
+              "thumb": null,
+              "small": null,
+              "medium": null,
+              "large": null,
+              "original": null
+            }
+          }
+        ],
+        "primary_publisher": {
+          "id": "jyc9bV7f9D",
+          "name": "Leder Games",
+          "url": "https://www.boardgameatlas.com/publisher/jyc9bV7f9D/leder-games"
+        },
+        "primary_designer": {
+          "id": "DJCmDFXmsh",
+          "name": "Cole Wehrle",
+          "url": "https://www.boardgameatlas.com/designer/DJCmDFXmsh/cole-wehrle"
+        },
+        "developers": [],
+        "related_to": [],
+        "related_as": [],
+        "artists": [
+          "Kyle Ferrin"
+        ],
+        "names": [],
+        "rules_url": "https://drive.google.com/drive/folders/1i9-iCUDzfGMs7HjFHhahwMS6efvvfX5w",
+        "amazon_rank": 16636,
+        "official_url": "http://ledergames.com/root/?utm_source=boardgameatlas.com&utm_medium=search&utm_campaign=bga_ads",
+        "comment_count": 1,
+        "num_user_ratings": 404,
+        "average_user_rating": 4.061560793825552,
+        "weight_amount": 4,
+        "weight_units": "lbs ",
+        "size_height": 9,
+        "size_depth": 3,
+        "size_units": "inches ",
+        "historical_low_prices": [
+          {
+            "country": "AU",
+            "date": "2022-12-27T17:18:19.431Z",
+            "price": 73.45,
+            "isLow": false
+          },
+          {
+            "country": "CA",
+            "date": "2023-01-06T14:54:31.194Z",
+            "price": 59.95,
+            "isLow": false
+          },
+          {
+            "country": "US",
+            "date": "2023-01-07T16:27:41.259Z",
+            "price": 48,
+            "isLow": false
+          },
+          {
+            "country": "UK",
+            "date": "2023-01-08T13:55:46.335Z",
+            "price": 54.95,
+            "isLow": false
+          }
+        ],
+        "active": true,
+        "num_user_complexity_votes": 11,
+        "average_learning_complexity": 3.818181818181818,
+        "average_strategy_complexity": 3.6363636363636362,
+        "visits": 38854,
+        "lists": 1915,
+        "mentions": 488,
+        "links": 68,
+        "plays": 3022,
+        "rank": 1,
+        "type": "game",
+        "sku": "LED01000",
+        "upc": "602573655900",
+        "isbn": "",
+        "video_links": [],
+        "availability_status": "Available",
+        "num_distributors": 6,
+        "trending_rank": 0,
+        "listing_clicks": 62,
+        "is_historical_low": false,
+        "skus": [
+          "2149274776",
+          "602573655900",
+          "LED01000",
+          "89256:153339",
+          "0602573655900",
+          "93117",
+          "ROO01",
+          "Ballarat|5dbd0e7b-33fa-ef7b-7107-cf67ba91ebbc",
+          "56274",
+          "+1+602573655900",
+          "root",
+          "2149139812",
+          "BG-000032-001",
+          "LED010000",
+          "LED1001",
+          "MDGRO00855",
+          "ROOT_XH",
+          "MAT-ROOT01-FR",
+          "LED-01001",
+          "LED-ROOT01-EN",
+          "SCA-SWF-011",
+          "2148827311",
+          "LED01000-DD",
+          "2148738763",
+          "3760146645165"
+        ],
+        "sku_objects": [
+          {
+            "name": "Noble Knight Games",
+            "sku": "2149274776"
+          },
+          {
+            "name": "Games Paradise",
+            "sku": "602573655900"
+          },
+          {
+            "name": "Card Haus",
+            "sku": "LED01000"
+          },
+          {
+            "name": "BoardGameCo",
+            "sku": "89256:153339"
+          },
+          {
+            "name": "Imaginaire Shop",
+            "sku": "0602573655900"
+          },
+          {
+            "name": "Game Shack Inc.",
+            "sku": "93117"
+          },
+          {
+            "name": "Advent Games",
+            "sku": "ROO01"
+          },
+          {
+            "name": "Guf",
+            "sku": "Ballarat|5dbd0e7b-33fa-ef7b-7107-cf67ba91ebbc"
+          },
+          {
+            "name": "Hanabee",
+            "sku": "56274"
+          },
+          {
+            "name": "Boardgame Master",
+            "sku": "+1+602573655900"
+          },
+          {
+            "name": "Rollers",
+            "sku": "root"
+          },
+          {
+            "name": "Noble Knight Games",
+            "sku": "2149139812"
+          },
+          {
+            "name": "Meeples and Milkshakes",
+            "sku": "BG-000032-001"
+          },
+          {
+            "name": "Power to the Meeple",
+            "sku": "LED010000"
+          },
+          {
+            "name": "Board's Edge Games",
+            "sku": "LED1001"
+          },
+          {
+            "name": "Mr. Dice Guy",
+            "sku": "MDGRO00855"
+          },
+          {
+            "name": "Gameology",
+            "sku": "ROOT_XH"
+          },
+          {
+            "name": "Philibert",
+            "sku": "MAT-ROOT01-FR"
+          },
+          {
+            "name": "Philibert",
+            "sku": "LED-01001"
+          },
+          {
+            "name": "Philibert",
+            "sku": "LED-ROOT01-EN"
+          },
+          {
+            "name": "Philibert",
+            "sku": "SCA-SWF-011"
+          },
+          {
+            "name": "Noble Knight Games",
+            "sku": "2148827311"
+          },
+          {
+            "name": "Boardlandia",
+            "sku": "LED01000-DD"
+          },
+          {
+            "name": "Noble Knight Games",
+            "sku": "2148738763"
+          },
+          {
+            "name": "Imaginaire Shop",
+            "sku": "3760146645165"
+          }
+        ],
+        "edit_url": "/products/listing-edit?objectId=TAAifFP590&product_line=Board Games&type=product",
+        "players": "2-4",
+        "playtime": "60-90",
+        "msrp_text": "$60.00",
+        "price_text": "$48.00",
+        "tags": [
+          "Корни",
+          "茂林源记",
+          "루트",
+          "Root",
+          "Root A Game of Woodland Might Right",
+          "Root A Game of Woodland Might and Right",
+          "Root Collection Base Game 5 Expansions Extras",
+          "Root Collection Root The Riverfolk Expansion",
+          "ROOT",
+          "Root: A Game of Woodland Might and Right",
+          "Root A Game of Woodland Might and Right w Resin Clearing Pack"
+        ],
+        "images": {
+          "thumb": "https://d2k4q26owzy373.cloudfront.net/40x40/games/uploaded/1540147295104",
+          "small": "https://d2k4q26owzy373.cloudfront.net/150x150/games/uploaded/1540147295104",
+          "medium": "https://d2k4q26owzy373.cloudfront.net/350x350/games/uploaded/1540147295104",
+          "large": "https://d2k4q26owzy373.cloudfront.net/700x700/games/uploaded/1540147295104",
+          "original": "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1540147295104"
+        },
+        "description_preview": " Find adventure in this marvelous asymmetric game. Root provides limitless replay value as you and your friends explore the unique factions all wanting to rule a fantastic forest kingdom. Play as the Marquise de Cat and dominate the woods, extracting its riches and policing its inhabitants, as the Woodland Alliance, gathering supporters and coordinate revolts against the ruling regime, the Eyrie Dynasties, regaining control of the woods while keeping your squabbling court at bay, or as the Vagabond, seeking fame and fortune as you forge alliances and rivalries with the other players. Each faction has its own play style and paths to victory, providing an immersive game experience you will want to play again and again. "
+      }
+    ],
+    "count": 1
+  }

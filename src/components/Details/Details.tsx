@@ -44,6 +44,11 @@ const Details = ({
   useEffect(() => {
     Promise.resolve(getDetails(id)).then((data) => {
       setGameInfo(cleanDetails(data, top100));
+    })
+    .catch((response) => {
+      console.log(response.status);
+      updateError();
+      setisLoading(false)
     });
   }, [top100]);
 
@@ -58,10 +63,10 @@ const Details = ({
             <p>Rank: {gameInfo.rank}</p>
             <p>Avg user rating: {gameInfo.averageUserRating}</p>
             <p># of ratings: {gameInfo.numUserRatings}</p>
-            <p>About: {gameInfo.description}</p>
+            <p id="about">About: {gameInfo.description}</p>
             <p>Players: {gameInfo.players}</p>
             <p>Playtime: {gameInfo.playtime}</p>
-            <p>Official site: {gameInfo.officialUrl}</p>
+            <p>Official site: <a href={gameInfo.officialUrl}>{gameInfo.officialUrl}</a></p>
             <p>Price: ${gameInfo.price}</p>
             <button className="heart-container" onClick={() => {toggleFav(gameInfo.id)}} aria-label="heart favorite button">
               <BsSuitHeartFill
