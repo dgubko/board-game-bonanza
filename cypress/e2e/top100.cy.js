@@ -9,15 +9,19 @@ describe('Top 100', () => {
     cy.visit('http://localhost:3000/')
   })
 
-  it('displays a title', () => {
+  it('displays a title, header, and nav bar', () => {
     cy.get("#title").contains('Boardgame')
     cy.get('#title').invoke('text').then((text) => {
       const word = text.split(' ')
       assert.isTrue(words.includes(word[1]))
     })
+    cy.get('#top100-button').should('have.css', 'background-color', 'rgb(171, 176, 177)')
+    cy.get('#fav-button').should('have.css', 'background-color', 'rgb(0, 221, 255)')
+    cy.get('#search-input').should('exist')
   })
 
   it('displays all top100 games', () => {
+    cy.get('#search-input').should('exist')
     cy.get('.gameCard-container').should('have.length', 2)
     cy.get('.gameCard-container').eq(0).should('contain', "Root")
       .and('contain', '$48.00')
@@ -38,7 +42,7 @@ describe('Top 100', () => {
       })
   })
 
-  it('favorites a game and changes color when heart is clicked', () => {
+  it('toggle favorites when heart is clicked', () => {
     cy.get('.heart-container').eq(0)
     .within(() => {
       cy.get('.heart').should('exist')
@@ -53,6 +57,16 @@ describe('Top 100', () => {
 
     cy.get('#fav-button').click()
     cy.get('.fav-game-card-wrapper').contains('Root')
+
+    cy.get('#top100-button').click()
+    cy.get('.heart-container').eq(0).click()
+      .within(() => {
+        cy.get('.heart').should('exist')
+        .and('have.css', 'fill', 'rgb(137, 137, 137)')
+      })
+    
+    cy.get('#fav-button').click()
+    cy.get('.fav-game-card-wrapper').should('not.exist')
   })
 
   it('Should display top100 when top100 button is clicked from favorites', () => {
@@ -120,7 +134,7 @@ describe('Top 100', () => {
   })
 
   it('Should be able to search for a specific game', () => {
-    cy.get('#search-input').type('Roo')
+    cy.get('#search-input').type('Roo').should('have.value', 'Roo')
     cy.get('.gameCard-container').eq(0).should('contain', "Root")
     .and('contain', '$48.00')
     .and('contain', '4.06 / 5')
@@ -130,6 +144,12 @@ describe('Top 100', () => {
       cy.get('button').eq(1).should('exist')
     })
     cy.get('.gameCard-container').eq(1).should('not.exist')
+  })
+
+  it('Should see a message when there are no search results', () => {
+    cy.get('#search-input').type('xx').should('have.value', 'xx')
+    cy.get('.gameCard-container').should('not.exist')
+    cy.get('.search-no-games').should('contain', 'Sorry, there were no games that matched your search. Please try a different search.')
   })
 
   it('Should show an error message when a user uses an incorrect url', () => {

@@ -23,8 +23,8 @@ const FavGameCard = ({
     <div className="fav-game-card-wrapper">
       <Link className="fav-game-card" to={"/details/" + id}>
         <div>
-          <img src={image} alt={"Vibrant boardgame cover of " + name}></img>
-          <div>
+          <img id="fav-image" src={image} alt={"Vibrant boardgame cover of " + name}></img>
+          <div className="name-and-rating">
             <p>{name}</p>
             <p>⭐️{rating.toFixed(2)}</p>
           </div>

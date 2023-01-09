@@ -21,3 +21,11 @@
   height: 200px;
   width: auto;
 }
+
+.search-no-games {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #174550;
+  margin-top: 5%;
+}
