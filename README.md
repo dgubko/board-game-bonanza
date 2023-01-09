@@ -87,11 +87,11 @@ GitHub Project Board | Figma | Zoom | Slack
 
 ## Contributors
 
-- Adelle Pitsas [GitHub](https://github.com/Adelle-Pitsas) | [LinkedIn](https://www.linkedin.com/in/adelle-pitsas)
+- Adelle Pitsas [GitHub](https://github.com/Adelle-Pitsas) | [LinkedIn](https://www.linkedin.com/in/adelle-pitsas-461503183/)
 - Courtney Lippman [GitHub](https://github.com/Courtney-Lippman) | [LinkedIn](https://www.linkedin.com/in/courtneylippman)
 - Dmitrii Gubko [GitHub](https://github.com/dgubko) | [LinkedIn](https://www.linkedin.com/in/dmitrii-gubko)
 - Keyaanna (Kiko) Pausch [GitHub](https://github.com/knpausch) | [LinkedIn](https://www.linkedin.com/in/knpausch/)
-- Ryan Nagel [GitHub](https://github.com/Nagel29) | [LinkedIn](https://www.linkedin.com/in/ryan-nagel)
+- Ryan Nagel [GitHub](https://github.com/Nagel29) | [LinkedIn](https://www.linkedin.com/in/ryan-nagel-000280173/)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
