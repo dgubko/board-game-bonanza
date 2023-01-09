@@ -16,13 +16,15 @@ const Details = ({
   updateError,
   toggleFav,
   addComment,
-  deleteComment
+  deleteComment,
+  clearClicked
 }: {
   top100: CleanedGame[];
   updateError: () => void;
   toggleFav: (id: string) => void;
   addComment: (review: Review, id: string) => void;
   deleteComment: (commentId: number, id: string) => void;
+  clearClicked: () => void
 }) => {
   const [gameInfo, setGameInfo] = useState<CleanDetails>(Object);
   const [isLoading, setisLoading] = useState<boolean>(true);
@@ -33,6 +35,7 @@ const Details = ({
       .then((data) => {
         setGameInfo(cleanDetails(data, top100));
         setisLoading(false)
+        clearClicked()
       })
       .catch((response) => {
         console.log(response.status);
