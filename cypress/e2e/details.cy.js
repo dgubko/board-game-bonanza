@@ -1,7 +1,7 @@
 import { CgYinyang } from "react-icons/cg";
 import { words } from "../../src/utilities/utilities";
 
-describe("Game details when API server is up", () => {
+describe("Game details when API server is running", () => {
   beforeEach(() => {
     cy.intercept('https://api.boardgameatlas.com/api/search?order_by=rank&ascending=false&limit=100&client_id=NO0Fq8pQcF', {
     method:"GET",
@@ -18,7 +18,7 @@ describe("Game details when API server is up", () => {
     cy.get(".gameCard-container").eq(0).click();
   });
 
-  it("displays a title", () => {
+  it("should display a title", () => {
     cy.get("#title").contains("Boardgame");
     cy.get("#title")
       .invoke("text")
@@ -28,7 +28,7 @@ describe("Game details when API server is up", () => {
       });
   });
 
-  it("should display boardinfo", () => {
+  it("should display boardgame info", () => {
     cy.get('.details-and-comment-container')
       .should('contain', 'Rank: 1')
       .and('contain', 'Avg user rating: 4.06')
@@ -125,6 +125,7 @@ describe("Game details when API server is down", () => {
     
   it('should show error message when the api is down', () => {
     cy.get('.error-modal').should("contain", "Oops! Something went wrong!");
+    cy.get('#dismiss-button').should('exist')
     });
 
     it("should bring user back to home page when dismiss button is clicked", () => {
