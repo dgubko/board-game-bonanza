@@ -1,11 +1,11 @@
+import "./Details.css";
+import "../Heart/Heart.css";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GameDetails, CleanDetails, CleanedGame } from "../../interfaces";
 import { getDetails } from "../../apiCalls/games";
 import { cleanDetails } from "../../utilities/utilities";
 import { BsSuitHeartFill } from "react-icons/bs";
-import "./Details.css";
-import "../Heart/Heart.css";
 import Form from "../Form/Form";
 import { Review } from "../../interfaces";
 import Comments from "../Comments/Comments";
