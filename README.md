@@ -53,6 +53,16 @@ GitHub Project Board | Figma | Zoom | Slack
 
 ## Preview
 
+### Searching
+
+
+### Commenting
+
+![Commenting](https://user-images.githubusercontent.com/104169837/211444208-9383334d-ff72-4180-bc4e-8a8a4d2be57e.gif)
+
+### Favoriting
+
+
 ## Planning Process
 
 ### Component Map
