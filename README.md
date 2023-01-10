@@ -47,6 +47,10 @@ GitHub Project Board | Figma | Zoom | Slack
 
 - Ryan Nagel: Solidify React and Router
 
+## Deployed Link
+
+[Board Game Bonanza](https://board-game-bonanza.vercel.app/)
+
 ## Preview
 
 ## Planning Process
@@ -74,15 +78,15 @@ GitHub Project Board | Figma | Zoom | Slack
 
 ## Reflections
 
-- Adelle Pitsas:
+- Adelle Pitsas: “Typescript was fun to learn! As we got going with typing, we ran into less bugs and the building of the app felt straight forward. As a team, we did a lot of pair programming which was helpful as we were all using a new language. I felt like as a developer, I not only learned TypeScript through this project but also learned how I learn (what questions to ask, how to follow error messages, etc).”
 
-- Courtney Lippman:
+- Courtney Lippman: "Typescript has been on my list of technologies that I wanted to learn for a while now. Being able to pick a new technology and navigate the adventures of self-teaching was an experience that left me wanting more. I could not have asked for better teammates for this project. The collaboration and communication were impressive, allowing a team of 5 to create an exceptional product quickly. Our planning was detailed and thorough, our Agile Workflow was flawless, and the Stand Ups were efficient. Being able to gain proficiency with Typescript and solidify my skills with react, router, cypress testing, and network requests was a profound experience."
 
-- Dmitrii Gubko:
+- Dmitrii Gubko: "I really enjoyed collaborating with my team for this specific application. All of my teammates frequently and openly communicated throughout the entire process, which lead me to realize how important it is to have effective communication. During the project, my knowledge of cypress testing was improved and I gained a solid understanding of Typescript."
 
-- Keyanna (Kiko) Pausch:
+- Keyanna (Kiko) Pausch: "Working with a healthy sized group gave me the confidence to challenge myself to explore areas I could grow on such as cypress testing, React (ver 6), hooks, react icons, css animation and aria roles for accessibility. Our daily stand ups to review the project board and assign/grab tickets was very effective to accomplish our tasks, especially in a remote setting. Our communication was very thorough yet personable because the group was very supportive and open to new ideas, troubleshooting techniques, and web layout styling. From this experience I have learned to grow fond of react (ver 6), route, and cypress testing and look forward to utilizing them more in future projects."
 
-- Ryan Nagel:
+- Ryan Nagel: "This was a valuable experience with a great group! Learning goals were met and I’m proud of our ability to learn a whole new tech (TypeScript) and effectively apply it to this project. It’s great that we met our goal of writing the entire application with only using functional components and hooks as well."
 
 
 ## Contributors
