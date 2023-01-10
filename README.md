@@ -55,12 +55,15 @@ GitHub Project Board | Figma | Zoom | Slack
 
 ### Searching
 
+![Searching (1)](https://user-images.githubusercontent.com/104169837/211446619-93f26ee0-d391-48ce-a37b-338d639e1c59.gif)
 
 ### Commenting
 
-![Commenting](https://user-images.githubusercontent.com/104169837/211444208-9383334d-ff72-4180-bc4e-8a8a4d2be57e.gif)
+![Commenting (1)](https://user-images.githubusercontent.com/104169837/211446592-18f4ae24-fb43-41e7-bed0-cc0e9abd6d28.gif)
 
 ### Favoriting
+
+![Favoriting (1)](https://user-images.githubusercontent.com/104169837/211446605-b31ac7fe-66b0-4b21-b1bf-337132d50382.gif)
 
 
 ## Planning Process
